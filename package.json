@@ -12,6 +12,7 @@
   "dependencies": {
     "@tabler/icons-react": "^3.34.0",
     "clsx": "^2.1.1",
+    "cobe": "^0.6.4",
     "lucide-react": "^0.525.0",
     "motion": "^12.23.6",
     "ogl": "^1.0.11",

@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Logo from "./Logo";
-import { Menu, X, Search, User, Bell } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
     const [activeLink, setActiveLink] = useState("Home");
 
     const links = [
@@ -14,31 +13,28 @@ export function Navbar() {
         { name: "Anime", href: "#anime" }
     ];
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
     const handleLinkClick = (linkName) => {
         setActiveLink(linkName);
         setIsOpen(false);
     };
 
     return (
-        <nav className="w-full z-50 fixed top-0 left-0 transition-all duration-300 bg-black/20">
-            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <nav className={`
+            absolute top-6 left-1/2 transform -translate-x-1/2 z-50
+            w-[90%] max-w-6xl px-6 py-4
+            transition-all duration-300
+        `}>
+            <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                     <Logo />
                 </div>
+
+                {/* Desktop Links */}
                 <ul className="hidden md:flex items-center space-x-8">
                     {links.map(link => (
                         <li key={link.name}>
                             <a 
-                                href={link.href} 
+                                href={link.href}
                                 onClick={() => handleLinkClick(link.name)}
                                 className={`relative text-white font-medium transition-all duration-300 hover:text-green-400 group ${
                                     activeLink === link.name ? "text-green-400" : ""
@@ -52,50 +48,52 @@ export function Navbar() {
                         </li>
                     ))}
                 </ul>
+
+                {/* Auth Buttons */}
                 <div className="hidden md:flex items-center space-x-4">
-                    <button className="text-white/80 hover:text-white transition-colors duration-200 p-2 rounded-full hover:bg-white/10">
+                    <button className="text-white/80 hover:text-white transition p-2 rounded-full hover:bg-white/10">
                         Login
                     </button>
-                    <button className="text-white/80 hover:text-white transition-colors duration-200 p-2 rounded-full hover:bg-white/10 relative">
+                    <button className="text-white/80 hover:text-white transition p-2 rounded-full hover:bg-white/10">
                         Register
                     </button>
                 </div>
-                <button 
-                    onClick={() => setIsOpen(!isOpen)} 
-                    className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
+
+                {/* Mobile Menu */}
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition"
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
-            {/* Mobile Menu */}
-            <div className={`md:hidden overflow-hidden transition-all duration-300 ${
-                isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            {/* Mobile Nav */}
+            <div className={`md:hidden transition-all duration-300 overflow-hidden ${
+                isOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
             }`}>
-                <div className="px-6 py-4 bg-black/95 backdrop-blur-lg border-t border-white/10">
-                    <ul className="flex flex-col space-y-4">
-                        {links.map(link => (
-                            <li key={link.name}>
-                                <a 
-                                    href={link.href} 
-                                    onClick={() => handleLinkClick(link.name)}
-                                    className={`block text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 hover:bg-white/10 hover:text-green-400 ${
-                                        activeLink === link.name ? "text-green-400 bg-white/5" : ""
-                                    }`}
-                                >
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                    <div className="flex items-center justify-center space-x-6 mt-6 pt-4 border-t border-white/10">
-                        <button className="text-white/80 hover:text-white transition-colors duration-200 p-3 rounded-full hover:bg-white/10">
-                            Login
-                        </button>
-                        <button className="text-white/80 hover:text-white transition-colors duration-200 p-3 rounded-full hover:bg-white/10 relative">
-                            Register
-                        </button>
-                    </div>
+                <ul className="flex flex-col space-y-4">
+                    {links.map(link => (
+                        <li key={link.name}>
+                            <a 
+                                href={link.href}
+                                onClick={() => handleLinkClick(link.name)}
+                                className={`block text-white font-medium py-2 px-4 rounded-lg transition hover:bg-white/10 ${
+                                    activeLink === link.name ? "text-green-400" : ""
+                                }`}
+                            >
+                                {link.name}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+                <div className="flex justify-center space-x-6 mt-6 pt-4 border-t border-white/10">
+                    <button className="text-white/80 hover:text-white transition p-3 rounded-full hover:bg-white/10">
+                        Login
+                    </button>
+                    <button className="text-white/80 hover:text-white transition p-3 rounded-full hover:bg-white/10">
+                        Register
+                    </button>
                 </div>
             </div>
         </nav>
