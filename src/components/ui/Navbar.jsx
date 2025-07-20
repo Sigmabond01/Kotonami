@@ -1,16 +1,17 @@
 import { useState } from "react";
 import Logo from "./Logo";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [activeLink, setActiveLink] = useState("Home");
 
     const links = [
-        { name: "Home", href: "#home" },
-        { name: "Movies", href: "#movies" },
-        { name: "TV Series", href: "#tv-series" },
-        { name: "Anime", href: "#anime" }
+        { name: "Home", to: "/" },
+        { name: "Movies", to: "/movies" },
+        { name: "TV Series", to: "/tvseries" },
+        { name: "Anime", to: "/anime" }
     ];
 
     const handleLinkClick = (linkName) => {
@@ -33,8 +34,8 @@ export function Navbar() {
                 <ul className="hidden md:flex items-center space-x-8">
                     {links.map(link => (
                         <li key={link.name}>
-                            <a 
-                                href={link.href}
+                            <Link 
+                                to={link.to}
                                 onClick={() => handleLinkClick(link.name)}
                                 className={`relative text-white font-medium transition-all duration-300 hover:text-green-400 group ${
                                     activeLink === link.name ? "text-green-400" : ""
@@ -44,22 +45,22 @@ export function Navbar() {
                                 <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-green-400 transform transition-transform duration-300 ${
                                     activeLink === link.name ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                                 }`}></span>
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
 
                 {/* Auth Buttons */}
-                <div className="hidden md:flex items-center space-x-4">
-                    <button className="text-white/80 hover:text-white transition p-2 rounded-full hover:bg-white/10">
+                <div className="hidden md:flex items-center space-x-8 font-extrabold">
+                    <Link to="/login" className="text-white/80 hover:text-white transition duration-300 p-2 rounded-lg hover:bg-white/10">
                         Login
-                    </button>
-                    <button className="text-white/80 hover:text-white transition p-2 rounded-full hover:bg-white/10">
+                    </Link>
+                    <Link to="/register" className="text-white/80 hover:text-white transition duration-300 p-2 rounded-lg hover:bg-white/10">
                         Register
-                    </button>
+                    </Link>
                 </div>
 
-                {/* Mobile Menu */}
+                {/* Mobile Menu Toggle */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition"
@@ -75,25 +76,25 @@ export function Navbar() {
                 <ul className="flex flex-col space-y-4">
                     {links.map(link => (
                         <li key={link.name}>
-                            <a 
-                                href={link.href}
+                            <Link 
+                                to={link.to}
                                 onClick={() => handleLinkClick(link.name)}
                                 className={`block text-white font-medium py-2 px-4 rounded-lg transition hover:bg-white/10 ${
                                     activeLink === link.name ? "text-green-400" : ""
                                 }`}
                             >
                                 {link.name}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
                 <div className="flex justify-center space-x-6 mt-6 pt-4 border-t border-white/10">
-                    <button className="text-white/80 hover:text-white transition p-3 rounded-full hover:bg-white/10">
+                    <Link to="/login" className="text-white/80 hover:text-white transition p-3 rounded-full hover:bg-white/10">
                         Login
-                    </button>
-                    <button className="text-white/80 hover:text-white transition p-3 rounded-full hover:bg-white/10">
+                    </Link>
+                    <Link to="/register" className="text-white/80 hover:text-white transition p-3 rounded-full hover:bg-white/10">
                         Register
-                    </button>
+                    </Link>
                 </div>
             </div>
         </nav>
