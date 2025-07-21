@@ -14,7 +14,7 @@ export default function Sidebar() {
   ]
 
   return (
-    <div className={`fixed top-0 left-0 h-full bg-zinc-900 text-white shadow-lg z-50 transition-all duration-300 ${open ? "w-60" : "w-16"}`}>
+    <div className={`fixed top-0 left-0 h-full bg-green-950 text-white shadow-lg z-50 transition-all font-mincho duration-300 ${open ? "w-60" : "w-16"}`}>
       <div className="flex items-center justify-between px-4 py-4 border-b border-white/10">
         <span className={`text-xl font-bold transition-all ${open ? "opacity-100" : "opacity-0 w-0"}`}><Logo /></span>
         <button onClick={() => setOpen(!open)} className="text-white">
