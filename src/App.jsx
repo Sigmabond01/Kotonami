@@ -12,6 +12,7 @@ import Anime from './pages/Anime/Anime'
 import Login from './pages/Login'
 import MovieDetail from './pages/Movies/MoviesDetail';
 import AnimeDetail from './pages/Anime/AnimeDetail';
+import TVSeriesDetail from './pages/TVSeries/TVSeriesDetail';
 
 function App() {
   const aboutRef = useRef(null);
@@ -52,6 +53,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/anime/:slug" element={<AnimeDetail />} />
       <Route path="/movies/:slug" element={<MovieDetail />} />
+      <Route path="/tvseries/:slug" element={<TVSeriesDetail />} />
     </Routes>
   )
 }
