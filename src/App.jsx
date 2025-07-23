@@ -6,10 +6,12 @@ import { About } from './components/About'
 import { FeaturesSectionDemo } from './components/Features'
 import { Footer } from './components/Footer'
 import Hero from './components/Hero'
-import Movies from './pages/Movies'
-import TVSeries from './pages/TVSeries'
-import Anime from './pages/Anime'
+import Movies from './pages/Movies/Movies'
+import TVSeries from './pages/TVSeries/TVSeries'
+import Anime from './pages/Anime/Anime'
 import Login from './pages/Login'
+import MovieDetail from './pages/Movies/MoviesDetail';
+import AnimeDetail from './pages/Anime/AnimeDetail';
 
 function App() {
   const aboutRef = useRef(null);
@@ -48,6 +50,8 @@ function App() {
       <Route path="/tvseries" element={<TVSeries />} />
       <Route path="/anime" element={<Anime />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/anime/:slug" element={<AnimeDetail />} />
+      <Route path="/movies/:slug" element={<MovieDetail />} />
     </Routes>
   )
 }
