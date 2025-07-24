@@ -14,7 +14,6 @@ export function Navbar() {
         { name: "Podcasts", to: "/podcasts" },
         { name: "Audiobooks", to: "/audiobooks" },
     ];
-
     const handleLinkClick = (linkName) => {
         setActiveLink(linkName);
         setIsOpen(false);
@@ -30,8 +29,6 @@ export function Navbar() {
                 <div className="flex items-center space-x-2">
                     <Logo />
                 </div>
-
-                {/* Desktop Links */}
                 <ul className="hidden md:flex items-center space-x-8">
                     {links.map(link => (
                         <li key={link.name}>

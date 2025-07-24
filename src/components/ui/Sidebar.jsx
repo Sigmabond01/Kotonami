@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { HomeIcon, FilmIcon, TvIcon, MonitorPlayIcon, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
-export default function Sidebar() {
+export  function Sidebar() {
   const [open, setOpen] = useState(true);
   const location = useLocation();
   const navItems = [
