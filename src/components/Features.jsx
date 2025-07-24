@@ -12,50 +12,51 @@ import {
 
 export function FeaturesSectionDemo() {
   const features = [
-    {
-      title: "Stream Japanese Dramas",
-      description: "Enjoy an ever-growing collection of J-dramas and anime — legally and freely.",
-      icon: <IconMovie />,
-    },
-    {
-      title: "Dual Subtitles",
-      description: "Watch with both Japanese and English subtitles to boost comprehension.",
-      icon: <IconSubtask />,
-    },
-    {
-      title: "Word Meanings in Real Time",
-      description: "Click on Japanese words in the subtitles to instantly get definitions and readings.",
-      icon: <IconVocabulary />,
-    },
-    {
-      title: "Grammar & Vocab Highlights",
-      description: "Contextual grammar points and vocabulary notes appear as you watch.",
-      icon: <IconLanguageKatakana />,
-    },
-    {
-      title: "Scene-by-Scene Playback",
-      description: "Break episodes into scenes to replay tricky dialogues until they’re second nature.",
-      icon: <IconLayoutSidebarLeftCollapse />,
-    },
-    {
-      title: "Curated Watchlists",
-      description: "Choose from JLPT-based lists or genre-based recommendations.",
-      icon: <IconPlaylistAdd />,
-    },
-    {
-      title: "Progress Sync",
-      description: "Keep your learning journey synced across devices — no data loss.",
-      icon: <IconCloudUpload />,
-    },
-    {
-      title: "Save & Rewatch",
-      description: "Bookmark your favorite scenes, words, or episodes for targeted review.",
-      icon: <IconBookmark />,
-    },
-  ];
+  {
+    title: "Immersive Video Clips",
+    description: "Study bite-sized native Japanese clips designed to mirror real-world speech patterns.",
+    icon: <IconMovie />,
+  },
+  {
+    title: "Dual Subtitles",
+    description: "See both Japanese and English subs side-by-side to build intuition, not just translations.",
+    icon: <IconSubtask />,
+  },
+  {
+    title: "Click-to-Learn Words",
+    description: "Tap any Japanese word to get instant definitions, hiragana, pitch, and JLPT level.",
+    icon: <IconVocabulary />,
+  },
+  {
+    title: "Grammar & Vocab Annotations",
+    description: "Grammar points and key vocab auto-highlighted with context while watching.",
+    icon: <IconLanguageKatakana />,
+  },
+  {
+    title: "Scene-by-Scene Breakdown",
+    description: "Every clip is split by sentence or scene — replay what you don’t get, drill what matters.",
+    icon: <IconLayoutSidebarLeftCollapse />,
+  },
+  {
+    title: "JLPT-Aligned Playlists",
+    description: "Follow curated paths from N5 to N1 with clips tailored to your current level.",
+    icon: <IconPlaylistAdd />,
+  },
+  {
+    title: "Progress Tracking & Sync",
+    description: "Track your study time, seen clips, known vocab — synced across all your devices.",
+    icon: <IconCloudUpload />,
+  },
+  {
+    title: "Save & Review",
+    description: "Bookmark key moments, build your custom review decks, and rewatch at will.",
+    icon: <IconBookmark />,
+  },
+];
+
 
   return (
-    <section className="relative bg-[url('./bg4.jpg')] bg-contain bg-no-repeat dark:bg-[#1a271a] py-11">
+    <section className="relative bg-[url('./bg4.jpg')] bg-cover bg-no-repeat dark:bg-[#1a271a] py-11">
       <div className="absolute inset-0 bg-black/50 z-0 backdrop-blur-sm" />
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-mincho font-semibold text-center text-green-200 dark:text-green-200 mb-12">

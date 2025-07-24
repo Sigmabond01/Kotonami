@@ -9,9 +9,10 @@ export function Navbar() {
 
     const links = [
         { name: "Home", to: "/" },
-        { name: "Movies", to: "/movies" },
-        { name: "TV Series", to: "/tvseries" },
-        { name: "Anime", to: "/anime" }
+        { name: "Daily Life", to: "/dailylife" },
+        { name: "Interviews", to: "/interviews" },
+        { name: "Podcasts", to: "/podcasts" },
+        { name: "Audiobooks", to: "/audiobooks" },
     ];
 
     const handleLinkClick = (linkName) => {

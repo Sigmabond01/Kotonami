@@ -6,13 +6,13 @@ import { About } from './components/About'
 import { FeaturesSectionDemo } from './components/Features'
 import { Footer } from './components/Footer'
 import Hero from './components/Hero'
-import Movies from './pages/Movies/Movies'
-import TVSeries from './pages/TVSeries/TVSeries'
-import Anime from './pages/Anime/Anime'
+import Movies from './pages/Interviews/Movies'
+import TVSeries from './pages/Podcasts/TVSeries'
+import Anime from './pages/DailyLife/Anime'
 import Login from './pages/Login'
-import MovieDetail from './pages/Movies/MoviesDetail';
-import AnimeDetail from './pages/Anime/AnimeDetail';
-import TVSeriesDetail from './pages/TVSeries/TVSeriesDetail';
+import MovieDetail from './pages/Interviews/MoviesDetail';
+import AnimeDetail from './pages/DailyLife/AnimeDetail';
+import TVSeriesDetail from './pages/Podcasts/TVSeriesDetail';
 
 function App() {
   const aboutRef = useRef(null);

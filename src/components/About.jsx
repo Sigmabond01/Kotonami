@@ -8,9 +8,10 @@ export function About() {
         <h1 className="flex justify-center text-7xl pt-16">ABOUT</h1>
         <div className="max-w-6xl mx-auto font-medium pt-8 px-4">
           <p className="text-2xl">
-            <strong>KOTONAMI</strong> is an immersive Japanese learning platform built for learners who want more than textbooks and flashcards.
-            We combine the power of native media—anime, dramas, movies—with dual subtitles and real-time word meanings so you can absorb Japanese the way it’s actually spoken.
-          </p>
+            <strong>KOTONAMI</strong> is a Japanese learning platform built for learners who want more than flashcards and grammar drills.
+            We break down real spoken Japanese through curated video clips with dual subtitles, instant word meanings, and structured JLPT progression.
+            Write your own blogs, track your growth, and immerse yourself in the language the way natives use it—without relying on anime or dramas.
+            </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-8 px-4">
           {[
@@ -28,7 +29,7 @@ export function About() {
             },
             {
               icon: Brain,
-              title: "Real Shows. Real Language.",
+              title: "Real Videos. Real Language.",
               desc: "No slow, robotic learning content. Just real, native media so you learn how Japanese is actually spoken in different contexts—from casual slang to formal speech.",
               accent: "from-purple-400 to-purple-600",
             },

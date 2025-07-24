@@ -8,9 +8,10 @@ export default function Sidebar() {
   const location = useLocation();
   const navItems = [
     { name: "Home", icon: <HomeIcon size={20} />, to: "/" },
-    { name: "Movies", icon: <FilmIcon size={20} />, to: "/movies" },
-    { name: "TV Series", icon: <TvIcon size={20} />, to: "/tvseries" },
-    { name: "Anime", icon: <MonitorPlayIcon size={20} />, to: "/anime" },
+    { name: "Daily Life", icon: <FilmIcon size={20} />, to: "/dailylife" },
+    { name: "Interviews", icon: <TvIcon size={20} />, to: "/intervews" },
+    { name: "Podcasts", icon: <MonitorPlayIcon size={20} />, to: "/podcasts" },
+    { name: "Audiobooks", icon: <MonitorPlayIcon size={20} />, to: "/audiobooks" },
   ]
 
   return (

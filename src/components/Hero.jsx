@@ -14,9 +14,11 @@ export default function Hero() {
             Immersion was <strong className="text-green-400">NEVER</strong> this easy.
           </h1>
         </div>
-        <div className="max-w-3xl pl-60 font-semibold">
+        <div className="max-w-4xl pl-32 font-semibold">
           <p className="text-lg md:text-xl text-zinc-300">
-            Learn Japanese by watching real shows. Dual subtitles. Click any word to get instant meaning, hiragana, and JLPT level.
+          Learn Japanese the smart way with native video clips and tools that make every second count.
+          <strong> Kotonami</strong> shows you how Japanese is really spoken through level-based clips with dual subtitles.
+          Click any word to see its meaning, hiragana, and JLPT level instantly.
           </p>
         </div>
         <div className="space-x-8 flex justify-center items-center pl-24 pt-10">
