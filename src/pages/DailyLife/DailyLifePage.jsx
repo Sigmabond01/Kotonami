@@ -9,10 +9,10 @@ const daily = [
     description: "Explore local snacks in Osaka’s vibrant streets.",
   },
   {
-    slug: "tokyo-morning-routine",
-    title: "Tokyo Morning Routine",
-    thumbnail: "https://i.ytimg.com/vi/VIDEO_ID/hqdefault.jpg",
-    description: "A relaxing daily morning routine in Tokyo.",
+    slug: "buying-snacks-man",
+    title: "Buying Snacks in bus",
+    thumbnail: "https://i.ytimg.com/vi/UJyBgOdh9IA/hqdefault.jpg",
+    description: "Explore local snacks in Osaka’s vibrant streets.",
   },
   // add more
 ];
