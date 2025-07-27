@@ -1,10 +1,8 @@
-// DailyLifeDetail.jsx
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Sidebar } from "../../components/ui/Sidebar";
-import { useVideoSubtitles } from "../../hooks/useVideoSubtitles";
-
+import { useVideoSubtitles } from "../../hooks/useVideoSubtitles"; // Import the custom hook.
 
 const videos = {
   "buying-snacks-osaka": {
@@ -19,21 +17,20 @@ export default function DailyLifeDetail() {
   const { slug } = useParams();
   const video = videos[slug];
 
-  //custom hook to get all video and subtitle
+  // custom hook to get all video and subtitle related states and functions.
   const {
-  japaneseSubtitles,
-  englishSubtitles,
-  loadingSubtitles,
-  errorSubtitles,
-  playerRef,
-  videoContainerRef,
-  playerReady,
-  activeJapaneseSubtitle,
-  activeEnglishSubtitle,
-  isFullscreen,
-  toggleFullscreen,
-  MaximizeIcon,
-  MinimizeIcon,
+    japaneseSubtitles,
+    englishSubtitles,
+    loadingSubtitles,
+    errorSubtitles,
+    videoContainerRef,
+    playerReady,
+    activeJapaneseSubtitle,
+    activeEnglishSubtitle,
+    isFullscreen,
+    toggleFullscreen,
+    MaximizeIcon,
+    MinimizeIcon,
   } = useVideoSubtitles(video ? video.embedUrl : null);
 
   const [selectedWordData, setSelectedWordData] = useState(null);
@@ -41,7 +38,7 @@ export default function DailyLifeDetail() {
   const [errorWordData, setErrorWordData] = useState(null);
   const [showWordDetailsPanel, setShowWordDetailsPanel] = useState(false);
 
-  //function to handle click on a Japanese subtitle line
+  // function to handle click on a Japanese subtitle line (from overlay or full transcript)
   const handleJapaneseSubtitleClick = async (sentence) => {
     setLoadingWordData(true);
     setErrorWordData(null);
@@ -49,7 +46,7 @@ export default function DailyLifeDetail() {
     setShowWordDetailsPanel(true);
 
     try {
-      //post request to the backend API
+      // post request to the backend API
       const response = await axios.post('/api/parse-japanese-text', { sentence });
       setSelectedWordData(response.data);
     } catch (err) {
@@ -59,7 +56,8 @@ export default function DailyLifeDetail() {
       setLoadingWordData(false);
     }
   };
-  if(!video) {
+
+  if (!video) {
     return <div className="text-white p-10">Video not found</div>
   }
 
@@ -67,39 +65,40 @@ export default function DailyLifeDetail() {
     <div className="flex min-h-screen bg-[#03240f] text-white font-mincho">
       <Sidebar />
       <main className="flex-1 ml-16 md:ml-60 px-6 py-10 flex flex-col lg:flex-row gap-6">
+        {/* Left Column: Video and Subtitles */}
         <div className="flex-1">
           <h1 className="text-2xl font-bold mb-4">{video.title}</h1>
           <p className="text-sm text-gray-300 mb-6">{video.description}</p>
           <div
-          ref={videoContainerRef}
-          className={`relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg mb-6 bg-black ${isFullscreen ? 'fixed top-0 left-0 w-screen h-screen z-50 rounded-none' : ''}`}
+            ref={videoContainerRef}
+            className={`relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg mb-6 bg-black ${isFullscreen ? 'fixed top-0 left-0 w-screen h-screen z-50 rounded-none' : ''}`}
           >
             <div id="youtube-player" className="absolute top-0 left-0 w-full h-full"></div>
             {playerReady && (
               <button
-              onClick={toggleFullscreen}
-              className="absolute top-4 right-4 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full z-20 transition-opacity duration-200 opacity-0 hover:opacity-100 focus:opacity-100 group-hover:opacity-100"
+                onClick={toggleFullscreen}
+                className="absolute top-4 right-4 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-2 rounded-full z-20 transition-opacity duration-200 opacity-0 hover:opacity-100 focus:opacity-100 group-hover:opacity-100"
               >
                 {isFullscreen ? <MinimizeIcon size={20} /> : <MaximizeIcon size={20} />}
               </button>
             )}
             {playerReady && (activeJapaneseSubtitle || activeEnglishSubtitle) && (
               <div
-              className="absolute bottom-4 left-1/2 -translate-x-1/2 w-fit max-w-[90%] p-3 text-center bg-black bg-opacity-30 rounded-lg"
-              style={{ zIndex: 10 }}
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 w-fit max-w-[90%] p-3 text-center bg-black bg-opacity-30 rounded-lg"
+                style={{ zIndex: 10 }}
               >
                 {activeEnglishSubtitle && (
                   <p className="text-gray-200 text-lg mb-1 leading-tight">
                     {activeEnglishSubtitle.text}
                   </p>
                 )}
-                  {activeJapaneseSubtitle && (
-                    <p
+                {activeJapaneseSubtitle && (
+                  <p
                     className="text-yellow-300 text-xl font-bold cursor-pointer hover:underline leading-tight"
                     onClick={() => handleJapaneseSubtitleClick(activeJapaneseSubtitle.text)}>
-                      {activeJapaneseSubtitle.text}
-                    </p>
-                  )}
+                    {activeJapaneseSubtitle.text}
+                  </p>
+                )}
               </div>
             )}
           </div>
@@ -132,6 +131,7 @@ export default function DailyLifeDetail() {
             </div>
           </div>
         </div>
+        {/* Right Column: Word Details Panel */}
         {showWordDetailsPanel && (
           <div className="w-full lg:w-80 bg-white/5 rounded-xl p-4 shadow-lg flex-shrink-0 max-h-[calc(100vh-80px)] overflow-y-auto"> {/* Styling for the word details panel. */}
             <h2 className="text-xl font-semibold mb-3">Word Breakdown</h2> {/* Panel title. */}
