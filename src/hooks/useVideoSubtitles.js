@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
-import { Maximize, Minimize } from "lucide-react";
+import { MaximizeIcon , MinimizeIcon } from "lucide-react";
 
 //helper function to extract the 11-character YouTube video ID
 const getYoutubeVideoId = (url) => {
@@ -170,19 +170,19 @@ export const useVideoSubtitles = (videoEmbedUrl) => {
     }, []);
 
     return {
-    japaneseSubtitles, // Array of Japanese subtitle cues.
-    englishSubtitles, // Array of English subtitle cues.
-    loadingSubtitles, // Boolean indicating if subtitles are loading.
-    errorSubtitles, // Error message if subtitle loading failed.
-    playerRef, // Ref for the YouTube player instance.
-    videoContainerRef, // Ref for the video container for fullscreen.
-    playerReady, // Boolean indicating if the player is ready.
-    currentVideoTime, // Current video playback time.
-    activeJapaneseSubtitle, // The currently active Japanese subtitle cue.
-    activeEnglishSubtitle, // The currently active English subtitle cue.
-    isFullscreen, // Boolean indicating if custom fullscreen is active.
-    toggleFullscreen, // Function to toggle custom fullscreen.
-    MaximizeIcon, // Lucide React Maximize icon component.
-    MinimizeIcon, // Lucide React Minimize icon component.
+    japaneseSubtitles,
+    englishSubtitles,
+    loadingSubtitles,
+    errorSubtitles,
+    playerRef,
+    videoContainerRef,
+    playerReady,
+    currentVideoTime,
+    activeJapaneseSubtitle,
+    activeEnglishSubtitle,
+    isFullscreen,
+    toggleFullscreen,
+    MaximizeIcon,
+    MinimizeIcon,
   };
 }
