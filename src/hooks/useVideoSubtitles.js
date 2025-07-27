@@ -1,3 +1,4 @@
+// src/hooks/useVideoSubtitles.js
 import { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
 import { Maximize, Minimize } from 'lucide-react';
