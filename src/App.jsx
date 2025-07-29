@@ -10,6 +10,9 @@ import Hero from './components/Hero';
 import  DailyLifePage  from './pages/DailyLife/DailyLifePage';
 import DailyLifeDetail from './pages/DailyLife/DailyLifeDetail';
 
+import PodcastPage from './pages/Pocasts/PodcastPage';
+import Podcast from './pages/Pocasts/Podcast';
+
 function App() {
   const aboutRef = useRef(null);
   const featureRef = useRef(null);
@@ -44,6 +47,9 @@ function App() {
       />
       <Route path="/dailylife" element={<DailyLifePage />} />
       <Route path="/dailylife/:slug" element={<DailyLifeDetail />} />
+
+      <Route path="/podcasts" element={<PodcastPage />} />
+      <Route path="/podcasts/:slug" element={<Podcast />} />
     </Routes>
   );
 }

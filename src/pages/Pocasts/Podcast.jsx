@@ -5,54 +5,69 @@
     import { useVideoSubtitles } from "../../hooks/useVideoSubtitles";
 
     const videos = {
-      "jp-shopping": {
-        title: "Let's Go Shopping – 25 min Japanese Listening Practice",
-        embedUrl: "https://www.youtube.com/watch?v=UJyBgOdh9IA",
-        description: "Join a real-world 25-minute Japanese shopping interaction designed for immersive learning. This episode captures a natural conversation, perfect for JLPT N4–N3 learners practicing active listening, vocabulary recognition, and grammar spotting. Use this to shadow native speech or reinforce vocab in context."
-      },
-      "night-walk": {
-        title: "Night Walk in Nagoya – 20min Japanese Listening Practice",
-        embedUrl: "https://youtu.be/y7voh2JGmV0",
-        description: "Immerse yourself in native-level Japanese as you follow a calm night walk through Nagoya. This 20-minute episode features slow, clear speech—perfect for JLPT N4–N3 learners. Listen actively, pick out grammar patterns, and click on words for instant meaning.",
-      },
-      "kyoto-town": {
-        title: "Exploring an old town in Kyoto / Easy Japanese Vlog",
-        embedUrl: "https://youtu.be/2rf0xpYwdEs",
-        description:"Take a leisurely stroll through Kyoto’s charming old town in this Easy Japanese Vlog (N5–N4 level). Perfect for beginners and early intermediate learners, this immersive listening practice helps you absorb natural, slow-paced Japanese in a real setting.",
-      },
-      "kyoto-family": {
-        title:"Exploring Kyoto with Family – Casual Japanese Listening Practice",
-        embedUrl: "https://youtu.be/PfW2R1Ejwuo?si=1XQ8DzVhJXVUxGvB",
-        description: "Wander through Kyoto’s highlights—from the Shinkansen ride to temple strolls—in this relaxed vlog packed with everyday Japanese. Spoken entirely in casual, natural speech (no keigo), this episode is ideal for learners aiming to internalize conversational grammar, native phrasing, and spontaneous expressions in context."
-      },
-      "shopping-street": {
-  title: "Walking Through a Japanese Shopping Street – Daily Life & Culture",
-  embedUrl: "https://youtu.be/RA_VosefCG4?si=KdZLFAqLplGMdWMs",
-  description: "Wander through a vibrant Japanese shopping street filled with vending machines, traditional meals, and real cultural experiences. This episode offers immersive listening practice with natural, casual Japanese—perfect for JLPT N4–N3 learners aiming to improve their comprehension of everyday expressions in real context."
+      "takashii-from-japan-goldrush": {
+  title: "TakashiiFromJapan on How Foreigners View Japan – Goldrush Podcast Ep.96",
+  embedUrl: "https://youtu.be/_GO1RJA-hvM?si=d3HCLcRKkKxHfwOX",
+  description: "In this episode of the Goldrush Podcast, TakashiiFromJapan—one of the most well-known Japanese creators abroad—talks about cultural perception, identity, and what foreigners really think about Japan. Great for intermediate learners who want to follow natural conversational flow with real-world context."
 },
-"osaka-walk-talk": {
-  title: "Osaka Walk‑and‑Talk – Real Life Japanese Practice",
-  embedUrl: "https://youtu.be/OPJlI65cPGE",
-  description: "Stroll along Nakanoshima’s riverside in Osaka while chatting about sushi, yakitori and yakiniku with a native speaker. This relaxed walk‑and‑talk format gives you real-life, conversational Japanese in context—ideal for JLPT N4–N3 learners looking to internalize casual speech and everyday vocabulary."
+      "kole-goldnrush": {
+  title: "KOLE: The Rising Star of J-HipHop – GOLDNRUSH Ep.74",
+  embedUrl: "https://youtu.be/y9rAlKEzBzM",
+  description: "In Episode 74 of GOLDNRUSH PODCAST, KOLE—an emerging talent in Japanese hip-hop—talks about how a chance encounter with Yzerr in Atlanta brought him to Kawasaki. The episode dives into his path through the popular 'RAPSTAR Birth' series, his lyrical style in cyphers, and the story behind his sudden rise. A must-watch for fans of J-Rap and hip-hop culture."
 },
-"park-conversation": {
-  title: "Let's Learn Japanese in the Park – Beginner Listening Practice",
-  embedUrl: "https://youtu.be/rjmKQ-fjnyQ?si=TahPTKfGhp9N08xJ",
-  description: "Spend 13 minutes walking through a scenic park in Kagurazaka while engaging in natural Japanese conversation. This beginner‑level vlog (N5–N4) features clear, slow speech and real dialogue—excellent for shadowing, vocabulary reinforcement, and immersive listening exposure."
+"hokkaido-guide": {
+  title: "Hokkaido – Japanese Prefecture Podcast #1",
+  embedUrl: "https://youtu.be/f5pNIwgCVVE?si=jdj7idWD_NMu7e_I",
+  description: "Kick off this Japanese-language prefecture series with Hokkaido—famous for its nature, food, and culture. Spoken in clear, native-speed Japanese with on-screen subtitles, this episode is perfect for listening practice and exposure to natural phrasing, local references, and casual dialogue structures."
 },
-"dentist-visit": {
-  title: "Going to the Dentist – Comprehensible Japanese Vlog (EP.1)",
-  embedUrl: "https://youtu.be/zYBdhGBWX9c?list=PLwLSw1_eDZl3sLnaxsmQ0-pMuWsBe_dMo",
-  description: "Start your immersion journey with a beginner-friendly vlog documenting a simple day: waking up, prepping, and heading to the dentist. Spoken in slow, clear, and repetitive Japanese, this video is tailored for N5–N4 learners aiming to build core vocabulary and internalize grammar in real-life contexts."
+"inaka-kaso": {
+  title: "Rural Japan’s Depopulation Problem – Native Japanese Listening",
+  embedUrl: "https://youtu.be/d1bLBtBySGY",
+  description: "Why are Japan’s most scenic places also the most empty? This podcast explores '過疎'—rural depopulation—with native-level spoken Japanese, touching on social issues, personal reflections, and local life. Ideal for intermediate to advanced learners wanting real, unscripted listening practice."
 },
-"saturday-in-japan": {
-  title: "Japanese Listening Practice | A Saturday in Japan",
-  embedUrl: "https://youtu.be/r9EA4CpLUJo",
-  description: "Practice your Japanese listening by spending a casual Saturday in Japan. This video features slow, clear Japanese with visual context, perfect for beginner to intermediate learners. Use it for passive immersion or active listening drills."
+"nishida-rise": {
+  title: "Ace Spiker Yuji Nishida on Growth, YouTube & Marriage – GOLDNRUSH Ep.110",
+  embedUrl: "https://youtu.be/5eCWPY7k0Z4",
+  description: "In this episode of GOLDNRUSH Podcast, Japan's volleyball superstar Yuji Nishida reflects on how approaching things casually helped him master both sports and life. He dives into how he improved without pressure, his YouTube journey, and thoughts on married life—all in natural conversational Japanese. Great for intermediate learners aiming to grasp real speech patterns, mindset talk, and sports culture."
+},
+"yuyu-happiness": {
+  title: "Happiness – Japanese Conversation (N5-N3)",
+  embedUrl: "https://youtu.be/GQXqpBh8_kc",
+  description: "What does happiness mean to you? In this gentle and thoughtful episode, YUYU talks about 幸せ (しあわせ) using slow, clear Japanese suitable for beginners. Great for N5 to N3 learners who want real conversation input without getting overwhelmed. Includes natural expressions and vocab review points."
+},
+"regions-of-japan-56": {
+  title: "1-Hour Japanese Listening – Regions of Japan #56",
+  embedUrl: "https://youtu.be/Jvid5ttib-4",
+  description: "This relaxing 1-hour episode covers Japan’s 8 regions, told through real-life memories—from slipping on icy roads in Hokkaido to tasting miso in Gifu. The pace is beginner-friendly but rich with real vocabulary and cultural insight. Ideal for shadowing, passive immersion, or focused listening."
+},
+"wasabi-long-5": {
+  title: "1 Hour Random Japanese Talk | Coffee chat | 雑談 自然な話し方 | Wasabi Podcast LONG #5",
+  embedUrl: "https://youtu.be/nRuEzDxY2Zc",
+  description: "Join the Wasabi Podcast for a full hour of unscripted Japanese conversation. Perfect for learners aiming to absorb natural flow, intonation, and daily vocabulary. Great background listening while doing other tasks or for focused study."
+},
+"goldnrush-dan-ep89": {
+  title: "Say 'Yes' to Everything — Dan on Creativity | GOLDNRUSH PODCAST Ep.89",
+  embedUrl: "https://youtu.be/w5KPdk2gYKg",
+  description: "In GOLDNRUSH Podcast Ep.89, Dan—known for his multi-creative talents and open approach to opportunity—shares insights on how saying 'yes' shapes his career. The episode explores his creative process, working philosophy, and how staying flexible fuels his work across disciplines."
+},
+"slowjp-conbini-ep1": {
+  title: "Convenience Stores in Japan | My Slow Japanese Podcast #1",
+  embedUrl: "https://youtu.be/JRs2vrM_f78",
+  description: "In the first episode of My Slow Japanese Podcast, the speaker talks about Japanese convenience stores—how they work, what they offer, and why they’re a central part of daily life in Japan. The language is slow, clear, and perfect for Japanese learners practicing listening at a relaxed pace."
+},
+"goldnrush-tsunoda-ep105": {
+  title: "Inside the Mind of Japan’s Youngest F1 Driver | GOLDNRUSH Ep.105",
+  embedUrl: "https://youtu.be/Qj1dkCZfcRc",
+  description: "GOLDNRUSH Podcast Ep.105 dives into the world of Yuki Tsunoda, Japan’s youngest F1 driver. From managing over 1000 controls in his car to the pressures of elite motorsports, this episode reveals the reality behind the Red Bull athlete's journey. Includes discussion on Red Bull’s 'Rise Like Pro' campaign."
+},
+"nativepodcast-hometown-ep1": {
+  title: "Real Native Japanese Podcast: About My Hometown | Ep.1",
+  embedUrl: "https://youtu.be/we6eAG5TfBw",
+  description: "Episode 1 of this native-level Japanese podcast features a relaxed and unscripted discussion about the speaker's hometown. Aimed at learners who want to train their ear with real, unsimplified Japanese. Ideal for shadowing or passive listening."
 },
     };
 
-    export default function DailyLifeDetail() {
+    export default function Podcast() {
       const { slug } = useParams();
       const video = videos[slug];
 
