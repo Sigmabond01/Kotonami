@@ -5,69 +5,69 @@
     import { useVideoSubtitles } from "../../hooks/useVideoSubtitles";
 
     const videos = {
-      "takashii-from-japan-goldrush": {
-  title: "TakashiiFromJapan on How Foreigners View Japan – Goldrush Podcast Ep.96",
-  embedUrl: "https://youtu.be/_GO1RJA-hvM?si=d3HCLcRKkKxHfwOX",
-  description: "In this episode of the Goldrush Podcast, TakashiiFromJapan—one of the most well-known Japanese creators abroad—talks about cultural perception, identity, and what foreigners really think about Japan. Great for intermediate learners who want to follow natural conversational flow with real-world context."
+        "your-name-n5-audiobook": {
+  title: "Your Name Audiobook (JLPT N4/N5) | Learn Easy Japanese with Stories",
+  embedUrl: "https://www.youtube.com/embed/somEzKcCDVE",
+  description: "A simplified retelling of the hit film 'Your Name' tailored for beginner-level Japanese learners (JLPT N4/N5). This easy Japanese audiobook helps you improve listening skills through a familiar story, with natural narration and clear vocabulary."
 },
-"nativepodcast-hometown-ep1": {
-  title: "Real Native Japanese Podcast: About My Hometown | Ep.1",
-  embedUrl: "https://youtu.be/we6eAG5TfBw",
-  description: "Episode 1 of this native-level Japanese podcast features a relaxed and unscripted discussion about the speaker's hometown. Aimed at learners who want to train their ear with real, unsimplified Japanese. Ideal for shadowing or passive listening."
+"spirited-away-n5": {
+  title: "Spirited Away Audiobook (JLPT N4/N5) | Learn Easy Japanese with Stories",
+  embedUrl: "https://www.youtube.com/embed/tEoRxBLOMqg",
+  description: "A simplified audiobook adaptation of Spirited Away for JLPT N4/N5 learners. This story-focused lesson helps build vocabulary and listening comprehension with native pronunciation and slow, clear narration. Great for immersive learning."
 },
-      "kole-goldnrush": {
-  title: "KOLE: The Rising Star of J-HipHop – GOLDNRUSH Ep.74",
-  embedUrl: "https://youtu.be/y9rAlKEzBzM",
-  description: "In Episode 74 of GOLDNRUSH PODCAST, KOLE—an emerging talent in Japanese hip-hop—talks about how a chance encounter with Yzerr in Atlanta brought him to Kawasaki. The episode dives into his path through the popular 'RAPSTAR Birth' series, his lyrical style in cyphers, and the story behind his sudden rise. A must-watch for fans of J-Rap and hip-hop culture."
+"ogura-hyakunin-isshu-audiobook": {
+  title: "Ogura Hyakunin Isshu (Free Audio Book in Japanese)",
+  embedUrl: "https://www.youtube.com/embed/a94d3HlK_Cc",
+  description: "A free audiobook version of the famous Japanese poetry anthology Ogura Hyakunin Isshu, compiled by Fujiwara no Teika. This is an excellent resource for advanced learners interested in classical Japanese literature and listening practice rooted in historical context."
 },
-"hokkaido-guide": {
-  title: "Hokkaido – Japanese Prefecture Podcast #1",
-  embedUrl: "https://youtu.be/f5pNIwgCVVE?si=jdj7idWD_NMu7e_I",
-  description: "Kick off this Japanese-language prefecture series with Hokkaido—famous for its nature, food, and culture. Spoken in clear, native-speed Japanese with on-screen subtitles, this episode is perfect for listening practice and exposure to natural phrasing, local references, and casual dialogue structures."
+"howls-moving-castle-n5-part3": {
+  title: "Howl's Moving Castle: Easy Japanese Reading & Explanation (JLPT N4/N5, Part 3)",
+  embedUrl: "https://www.youtube.com/embed/kSZAmW63KC8",
+  description: "This is part 3 of an easy Japanese reading series based on Howl's Moving Castle. Tailored for JLPT N4/N5 learners, it features sentence-by-sentence explanations, vocabulary help, and grammar guidance to support natural comprehension and language acquisition."
 },
-"inaka-kaso": {
-  title: "Rural Japan’s Depopulation Problem – Native Japanese Listening",
-  embedUrl: "https://youtu.be/d1bLBtBySGY",
-  description: "Why are Japan’s most scenic places also the most empty? This podcast explores '過疎'—rural depopulation—with native-level spoken Japanese, touching on social issues, personal reflections, and local life. Ideal for intermediate to advanced learners wanting real, unscripted listening practice."
+"kouyahijiri-audiobook": {
+  title: "Kouyahijiri by Kyōka Izumi (Full Audiobook)",
+  embedUrl: "https://www.youtube.com/embed/hTWxrT6UAxs",
+  description: "A full-length Japanese audiobook of Kyōka Izumi’s 'Kouyahijiri' — a gothic tale set in the mountains. Known for its lush, expressive language and atmospheric storytelling, this is a rich resource for those delving into classical Japanese or literature-based immersion."
 },
-"nishida-rise": {
-  title: "Ace Spiker Yuji Nishida on Growth, YouTube & Marriage – GOLDNRUSH Ep.110",
-  embedUrl: "https://youtu.be/5eCWPY7k0Z4",
-  description: "In this episode of GOLDNRUSH Podcast, Japan's volleyball superstar Yuji Nishida reflects on how approaching things casually helped him master both sports and life. He dives into how he improved without pressure, his YouTube journey, and thoughts on married life—all in natural conversational Japanese. Great for intermediate learners aiming to grasp real speech patterns, mindset talk, and sports culture."
+"kikis-delivery-ghibli": {
+  title: "Learn Japanese with Ghibli: Kiki's Delivery Service - Scene Description",
+  embedUrl: "https://www.youtube.com/embed/ZZHZXpDaV-c",
+  description: "This video breaks down scenes from Ghibli's *Kiki's Delivery Service* to help learners absorb natural Japanese in context. It’s ideal for JLPT N4/N5 learners aiming to bridge textbook Japanese with real-world usage through storytelling and visual cues."
 },
-"yuyu-happiness": {
-  title: "Happiness – Japanese Conversation (N5-N3)",
-  embedUrl: "https://youtu.be/GQXqpBh8_kc",
-  description: "What does happiness mean to you? In this gentle and thoughtful episode, YUYU talks about 幸せ (しあわせ) using slow, clear Japanese suitable for beginners. Great for N5 to N3 learners who want real conversation input without getting overwhelmed. Includes natural expressions and vocab review points."
+"totoro-japanese-audiobook": {
+  title: "My Neighbor Totoro Audiobook (JLPT N4/N5)",
+  embedUrl: "https://www.youtube.com/embed/g4BslkuX6I0",
+  description: "This audiobook version of *My Neighbor Totoro* uses slow, clear Japanese tailored to JLPT N4/N5 learners. It’s an ideal tool for boosting listening skills and vocabulary through immersion in a beloved Ghibli story."
 },
-"regions-of-japan-56": {
-  title: "1-Hour Japanese Listening – Regions of Japan #56",
-  embedUrl: "https://youtu.be/Jvid5ttib-4",
-  description: "This relaxing 1-hour episode covers Japan’s 8 regions, told through real-life memories—from slipping on icy roads in Hokkaido to tasting miso in Gifu. The pace is beginner-friendly but rich with real vocabulary and cultural insight. Ideal for shadowing, passive immersion, or focused listening."
+"straw-turnaround-folktale": {
+  title: "From Straw to a Great Turnaround – Easy Japanese Folktale",
+  embedUrl: "https://www.youtube.com/embed/rLwowh9SBa4",
+  description: "This is a retelling of the classic Japanese folktale about how a single piece of straw leads to great fortune. Narrated in slow, clear Japanese for JLPT N5 learners, this is perfect for listening comprehension and cultural understanding."
 },
-"wasabi-long-5": {
-  title: "1 Hour Random Japanese Talk | Coffee chat | 雑談 自然な話し方 | Wasabi Podcast LONG #5",
-  embedUrl: "https://youtu.be/nRuEzDxY2Zc",
-  description: "Join the Wasabi Podcast for a full hour of unscripted Japanese conversation. Perfect for learners aiming to absorb natural flow, intonation, and daily vocabulary. Great background listening while doing other tasks or for focused study."
+"gongitsune-audiobook": {
+  title: "『ごんぎつね』– Japanese Classical Story Audiobook",
+  embedUrl: "https://www.youtube.com/embed/J6KtEUu7fhU",
+  description: "This audiobook narrates 'Gongitsune', a well-known Japanese folktale about a mischievous fox and a human boy. The story is read in clear, fluent Japanese and offers excellent practice for learners familiar with JLPT N4–N3 level vocabulary."
 },
-"goldnrush-dan-ep89": {
-  title: "Say 'Yes' to Everything — Dan on Creativity | GOLDNRUSH PODCAST Ep.89",
-  embedUrl: "https://youtu.be/w5KPdk2gYKg",
-  description: "In GOLDNRUSH Podcast Ep.89, Dan—known for his multi-creative talents and open approach to opportunity—shares insights on how saying 'yes' shapes his career. The episode explores his creative process, working philosophy, and how staying flexible fuels his work across disciplines."
+"toshisyun-akutagawa": {
+  title: "Toshisyun by Ryunosuke Akutagawa (Full Audiobook)",
+  embedUrl: "https://www.youtube.com/embed/cDPlxiHqcEw",
+  description: "A timeless short story by literary master Ryunosuke Akutagawa, 'Toshisyun' explores the journey of a young man seeking power under the mentorship of a wise hermit. This audiobook, read in Japanese, is perfect for learners interested in classical language, moral storytelling, and Japanese literature."
 },
-"slowjp-conbini-ep1": {
-  title: "Convenience Stores in Japan | My Slow Japanese Podcast #1",
-  embedUrl: "https://youtu.be/JRs2vrM_f78",
-  description: "In the first episode of My Slow Japanese Podcast, the speaker talks about Japanese convenience stores—how they work, what they offer, and why they’re a central part of daily life in Japan. The language is slow, clear, and perfect for Japanese learners practicing listening at a relaxed pace."
+"restaurant-of-many-orders": {
+  title: "『注文の多い料理店』– Kenji Miyazawa Audiobook",
+  embedUrl: "https://www.youtube.com/embed/q-o8i-5zSWs",
+  description: "This audiobook presents Kenji Miyazawa's famous short story 'The Restaurant of Many Orders'. It’s a bizarre tale about two hunters who get more than they bargained for at a mysterious restaurant. Narrated clearly in Japanese, it’s excellent for JLPT N4–N3 listeners aiming to immerse in classic literature."
 },
-"goldnrush-tsunoda-ep105": {
-  title: "Inside the Mind of Japan’s Youngest F1 Driver | GOLDNRUSH Ep.105",
-  embedUrl: "https://youtu.be/Qj1dkCZfcRc",
-  description: "GOLDNRUSH Podcast Ep.105 dives into the world of Yuki Tsunoda, Japan’s youngest F1 driver. From managing over 1000 controls in his car to the pressures of elite motorsports, this episode reveals the reality behind the Red Bull athlete's journey. Includes discussion on Red Bull’s 'Rise Like Pro' campaign."
+"poverty-god-folktale": {
+  title: "The One Living in the House Was… the Poverty God｜Japanese Folktale",
+  embedUrl: "https://www.youtube.com/embed/aNltAtr0pOE",
+  description: "This folktale narrated in simple Japanese tells the story of a man who discovers that the god of poverty has made itself at home in his house. With clear narration and basic vocabulary, this video is perfect for JLPT N5 learners wanting to improve their listening comprehension through traditional Japanese storytelling."
 },
     };
 
-    export default function Podcast() {
+    export default function AudioBook() {
       const { slug } = useParams();
       const video = videos[slug];
 

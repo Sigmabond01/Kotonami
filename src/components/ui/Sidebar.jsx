@@ -9,7 +9,7 @@ export  function Sidebar() {
   const navItems = [
     { name: "Home", icon: <HomeIcon size={20} />, to: "/" },
     { name: "Daily Life", icon: <FilmIcon size={20} />, to: "/dailylife" },
-    { name: "Interviews", icon: <TvIcon size={20} />, to: "/intervews" },
+    { name: "Interviews", icon: <TvIcon size={20} />, to: "/interviews" },
     { name: "Podcasts", icon: <MonitorPlayIcon size={20} />, to: "/podcasts" },
     { name: "Audiobooks", icon: <MonitorPlayIcon size={20} />, to: "/audiobooks" },
   ]

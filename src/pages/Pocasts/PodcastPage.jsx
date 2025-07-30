@@ -9,6 +9,12 @@ import { PodcastCard } from "./PodcastCard";
   description: "Popular Japanese YouTuber TakashiiFromJapan joins the Goldrush podcast to discuss how Japan is seen through foreign eyes.",
 },
 {
+  slug: "nativepodcast-hometown-ep1",
+  title: "Real Native Japanese Podcast: About My Hometown | Ep.1",
+  thumbnail: "https://img.youtube.com/vi/we6eAG5TfBw/maxresdefault.jpg",
+  description: "In this first episode, the host talks naturally in Japanese about their hometown. Great for intermediate learners aiming to hear native speed and style."
+},
+{
   slug: "kole-goldnrush",
   title: "KOLE: The Rising Star of J-HipHop – GOLDNRUSH Ep.74",
   thumbnail: "https://img.youtube.com/vi/y9rAlKEzBzM/maxresdefault.jpg",
@@ -67,12 +73,6 @@ import { PodcastCard } from "./PodcastCard";
   title: "Inside the Mind of Japan’s Youngest F1 Driver | GOLDNRUSH Ep.105",
   thumbnail: "https://img.youtube.com/vi/Qj1dkCZfcRc/maxresdefault.jpg",
   description: "Yuki Tsunoda talks about controlling over 1000 buttons in an F1 car, life behind the scenes, and his journey as Japan’s youngest F1 driver."
-},
-{
-  slug: "nativepodcast-hometown-ep1",
-  title: "Real Native Japanese Podcast: About My Hometown | Ep.1",
-  thumbnail: "https://img.youtube.com/vi/we6eAG5TfBw/maxresdefault.jpg",
-  description: "In this first episode, the host talks naturally in Japanese about their hometown. Great for intermediate learners aiming to hear native speed and style."
 },
     ];
 

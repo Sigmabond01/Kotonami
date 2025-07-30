@@ -13,6 +13,11 @@ import DailyLifeDetail from './pages/DailyLife/DailyLifeDetail';
 import PodcastPage from './pages/Pocasts/PodcastPage';
 import Podcast from './pages/Pocasts/Podcast';
 
+import InterviewPage from './pages/Interviews/InterviewPage';
+import Interview from './pages/Interviews/Interview';
+import AudioPage from './pages/AudioBooks/AudioPage';
+import AudioBook from './pages/AudioBooks/Audiobook';
+
 function App() {
   const aboutRef = useRef(null);
   const featureRef = useRef(null);
@@ -50,6 +55,13 @@ function App() {
 
       <Route path="/podcasts" element={<PodcastPage />} />
       <Route path="/podcasts/:slug" element={<Podcast />} />
+
+      <Route path="/interviews" element={<InterviewPage />} />
+      <Route path="/interviews/:slug" element={<Interview />} />
+
+      <Route path="/audiobooks" element={<AudioPage />} />
+      <Route path="/audiobooks/:slug" element={<AudioBook />} />
+
     </Routes>
   );
 }

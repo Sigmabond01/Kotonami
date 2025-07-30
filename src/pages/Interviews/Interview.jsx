@@ -5,69 +5,69 @@
     import { useVideoSubtitles } from "../../hooks/useVideoSubtitles";
 
     const videos = {
-      "takashii-from-japan-goldrush": {
-  title: "TakashiiFromJapan on How Foreigners View Japan – Goldrush Podcast Ep.96",
-  embedUrl: "https://youtu.be/_GO1RJA-hvM?si=d3HCLcRKkKxHfwOX",
-  description: "In this episode of the Goldrush Podcast, TakashiiFromJapan—one of the most well-known Japanese creators abroad—talks about cultural perception, identity, and what foreigners really think about Japan. Great for intermediate learners who want to follow natural conversational flow with real-world context."
+"easyjp-what-did-you-do-today": {
+  title: "What Did You Do Today? | Easy Japanese Interview (N5–N4)",
+  embedUrl: "https://youtu.be/QaExGOtWbac",
+  description: "An easy Japanese interview for beginners (N5–N4 level) centered around the question: 'What did you do today?'. Helps learners practice listening to real-life responses with clear, slow pronunciation and casual grammar."
 },
-"nativepodcast-hometown-ep1": {
-  title: "Real Native Japanese Podcast: About My Hometown | Ep.1",
-  embedUrl: "https://youtu.be/we6eAG5TfBw",
-  description: "Episode 1 of this native-level Japanese podcast features a relaxed and unscripted discussion about the speaker's hometown. Aimed at learners who want to train their ear with real, unsimplified Japanese. Ideal for shadowing or passive listening."
+"why-japan-so-cheap": {
+  title: "Why Is Japan So Cheap Now? | Japanese Interview",
+  embedUrl: "https://youtu.be/C0FSpSe50m0",
+  description: "This Japanese interview explores why Japan is considered cheap by foreigners today. The speaker discusses inflation, cost of living, and currency trends. A solid listening resource for learners interested in real-world economic context and conversational Japanese."
 },
-      "kole-goldnrush": {
-  title: "KOLE: The Rising Star of J-HipHop – GOLDNRUSH Ep.74",
-  embedUrl: "https://youtu.be/y9rAlKEzBzM",
-  description: "In Episode 74 of GOLDNRUSH PODCAST, KOLE—an emerging talent in Japanese hip-hop—talks about how a chance encounter with Yzerr in Atlanta brought him to Kawasaki. The episode dives into his path through the popular 'RAPSTAR Birth' series, his lyrical style in cyphers, and the story behind his sudden rise. A must-watch for fans of J-Rap and hip-hop culture."
+"japanese-elders-foreigners": {
+  title: "Do Japanese Elders Like Foreigners in Japan? | Street Interview",
+  embedUrl: "https://youtu.be/TbqtCm8q_G4",
+  description: "This street interview dives into the perceptions of elderly Japanese people toward foreigners living or visiting Japan. It offers raw insights into generational views, cultural attitudes, and subtle language cues—perfect for intermediate and advanced Japanese learners."
 },
-"hokkaido-guide": {
-  title: "Hokkaido – Japanese Prefecture Podcast #1",
-  embedUrl: "https://youtu.be/f5pNIwgCVVE?si=jdj7idWD_NMu7e_I",
-  description: "Kick off this Japanese-language prefecture series with Hokkaido—famous for its nature, food, and culture. Spoken in clear, native-speed Japanese with on-screen subtitles, this episode is perfect for listening practice and exposure to natural phrasing, local references, and casual dialogue structures."
+"ex-yakuza-confession": {
+  title: "Confessions of Ex-Yakuza Leader [ENG CC]",
+  embedUrl: "https://youtu.be/Fd4nlMmda_I",
+  description: "In this gripping Japanese interview (with English subtitles), a former Yakuza leader shares unfiltered stories from inside Japan’s infamous organized crime world. Learn about the discipline, loyalty, violence, and redemption behind one of Japan’s most feared organizations. Excellent for advanced Japanese listening with deep cultural context."
 },
-"inaka-kaso": {
-  title: "Rural Japan’s Depopulation Problem – Native Japanese Listening",
-  embedUrl: "https://youtu.be/d1bLBtBySGY",
-  description: "Why are Japan’s most scenic places also the most empty? This podcast explores '過疎'—rural depopulation—with native-level spoken Japanese, touching on social issues, personal reflections, and local life. Ideal for intermediate to advanced learners wanting real, unscripted listening practice."
+"things-foreigners-shouldnt-do": {
+  title: "Things Foreigners Should NEVER Do - Japanese Interview",
+  embedUrl: "https://youtu.be/tTBzNtEq47U",
+  description: "This Japanese street interview dives into social norms and unwritten rules foreigners often break in Japan. Locals express what they find disrespectful, surprising, or even shocking when tourists or residents ignore Japanese etiquette. A goldmine for serious learners trying to understand Japanese behavior, culture, and unspoken boundaries."
 },
-"nishida-rise": {
-  title: "Ace Spiker Yuji Nishida on Growth, YouTube & Marriage – GOLDNRUSH Ep.110",
-  embedUrl: "https://youtu.be/5eCWPY7k0Z4",
-  description: "In this episode of GOLDNRUSH Podcast, Japan's volleyball superstar Yuji Nishida reflects on how approaching things casually helped him master both sports and life. He dives into how he improved without pressure, his YouTube journey, and thoughts on married life—all in natural conversational Japanese. Great for intermediate learners aiming to grasp real speech patterns, mindset talk, and sports culture."
+"bald-man-dating-japan": {
+  title: "Would You Date a Bald Man? - Japanese Interview",
+  embedUrl: "https://youtu.be/t63dNVP08gs",
+  description: "This casual Japanese interview tackles a fun but revealing topic: baldness and dating appeal. Locals share their honest thoughts, preferences, and dealbreakers when it comes to hair—or the lack of it. Insightful for anyone curious about beauty standards and relationship expectations in Japan."
 },
-"yuyu-happiness": {
-  title: "Happiness – Japanese Conversation (N5-N3)",
-  embedUrl: "https://youtu.be/GQXqpBh8_kc",
-  description: "What does happiness mean to you? In this gentle and thoughtful episode, YUYU talks about 幸せ (しあわせ) using slow, clear Japanese suitable for beginners. Great for N5 to N3 learners who want real conversation input without getting overwhelmed. Includes natural expressions and vocab review points."
+"japanese-elders-regrets": {
+  title: "Japanese Elders Tell Us Their Biggest Regrets",
+  embedUrl: "https://youtu.be/PAzHMt77tjk",
+  description: "What do people wish they'd done differently? In this powerful street interview, elderly Japanese citizens share their biggest life regrets—missed opportunities, family, careers, and personal growth. An eye-opening perspective into aging, wisdom, and reflection in Japanese society."
 },
-"regions-of-japan-56": {
-  title: "1-Hour Japanese Listening – Regions of Japan #56",
-  embedUrl: "https://youtu.be/Jvid5ttib-4",
-  description: "This relaxing 1-hour episode covers Japan’s 8 regions, told through real-life memories—from slipping on icy roads in Hokkaido to tasting miso in Gifu. The pace is beginner-friendly but rich with real vocabulary and cultural insight. Ideal for shadowing, passive immersion, or focused listening."
+"japan-tourist-warnings": {
+  title: "\"Tourists, please don’t do this here\" from Japanese locals",
+  embedUrl: "https://youtu.be/fXV89VQ5dJQ",
+  description: "In this Japanese street interview, locals voice their frustrations and wishes to tourists visiting Japan. From public behavior to cultural respect, this video offers valuable insights and etiquette tips that every visitor should know to avoid offending locals or standing out in the wrong way."
 },
-"wasabi-long-5": {
-  title: "1 Hour Random Japanese Talk | Coffee chat | 雑談 自然な話し方 | Wasabi Podcast LONG #5",
-  embedUrl: "https://youtu.be/nRuEzDxY2Zc",
-  description: "Join the Wasabi Podcast for a full hour of unscripted Japanese conversation. Perfect for learners aiming to absorb natural flow, intonation, and daily vocabulary. Great background listening while doing other tasks or for focused study."
+"japan-confess-crush": {
+  title: "Asking Strangers in Japan to Confess to Their CRUSH",
+  embedUrl: "https://youtu.be/VPgvmzeQFq8",
+  description: "What happens when you ask people in Japan to reveal their hidden love? This lighthearted and candid street interview dives into the hearts of Japanese strangers as they share confessions about their crushes—some bold, some shy, all real. A sweet look at romance in Japanese culture."
 },
-"goldnrush-dan-ep89": {
-  title: "Say 'Yes' to Everything — Dan on Creativity | GOLDNRUSH PODCAST Ep.89",
-  embedUrl: "https://youtu.be/w5KPdk2gYKg",
-  description: "In GOLDNRUSH Podcast Ep.89, Dan—known for his multi-creative talents and open approach to opportunity—shares insights on how saying 'yes' shapes his career. The episode explores his creative process, working philosophy, and how staying flexible fuels his work across disciplines."
+"morning-routine-easy-jp": {
+  title: "Easy Japanese Interview - Morning Routine (N5-N4)",
+  embedUrl: "https://youtu.be/8kQCtx9Ff0A",
+  description: "A basic Japanese interview that walks through common morning routines. This is perfect for beginners (N5–N4) looking to improve listening comprehension and natural sentence structure. Use it for shadowing or vocab reinforcement."
 },
-"slowjp-conbini-ep1": {
-  title: "Convenience Stores in Japan | My Slow Japanese Podcast #1",
-  embedUrl: "https://youtu.be/JRs2vrM_f78",
-  description: "In the first episode of My Slow Japanese Podcast, the speaker talks about Japanese convenience stores—how they work, what they offer, and why they’re a central part of daily life in Japan. The language is slow, clear, and perfect for Japanese learners practicing listening at a relaxed pace."
+"why-jp-salarymen-work-hard": {
+  title: "Why Japanese Salarymen Work So Hard",
+  embedUrl: "https://youtu.be/25kp8rvWNJM",
+  description: "Explore why Japanese salarymen work extreme hours through real street interviews. Locals give raw, cultural insight into what's driving Japan’s intense work ethic—expectations, pride, and societal pressure. Great for learners trying to understand modern Japan beyond textbooks."
 },
-"goldnrush-tsunoda-ep105": {
-  title: "Inside the Mind of Japan’s Youngest F1 Driver | GOLDNRUSH Ep.105",
-  embedUrl: "https://youtu.be/Qj1dkCZfcRc",
-  description: "GOLDNRUSH Podcast Ep.105 dives into the world of Yuki Tsunoda, Japan’s youngest F1 driver. From managing over 1000 controls in his car to the pressures of elite motorsports, this episode reveals the reality behind the Red Bull athlete's journey. Includes discussion on Red Bull’s 'Rise Like Pro' campaign."
+"do-japanese-people-think-japanese-is-difficult": {
+  title: "Do Japanese People Think Japanese is Difficult? (Interview)",
+  embedUrl: "https://www.youtube.com/embed/QK400iXefwg",
+  description: "A Japanese street interview exploring what native speakers think about the difficulty of their own language. Great listening practice and insight into cultural perspectives on learning and using Japanese as a native speaker or foreigner."
 },
     };
 
-    export default function Podcast() {
+    export default function Interview() {
       const { slug } = useParams();
       const video = videos[slug];
 
