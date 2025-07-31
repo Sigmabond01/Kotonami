@@ -9,6 +9,7 @@ export function Navbar() {
 
     const links = [
         { name: "Home", to: "/" },
+        { name: "Anime", to: "/anime" },
         { name: "Daily Life", to: "/dailylife" },
         { name: "Interviews", to: "/interviews" },
         { name: "Podcasts", to: "/podcasts" },

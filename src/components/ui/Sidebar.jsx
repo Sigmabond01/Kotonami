@@ -3,11 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import { HomeIcon, FilmIcon, TvIcon, MonitorPlayIcon, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
-export  function Sidebar() {
+export function Sidebar() {
   const [open, setOpen] = useState(true);
   const location = useLocation();
   const navItems = [
     { name: "Home", icon: <HomeIcon size={20} />, to: "/" },
+    { name: "Anime", icon: <FilmIcon size={20} />, to: "/anime" },
     { name: "Daily Life", icon: <FilmIcon size={20} />, to: "/dailylife" },
     { name: "Interviews", icon: <TvIcon size={20} />, to: "/interviews" },
     { name: "Podcasts", icon: <MonitorPlayIcon size={20} />, to: "/podcasts" },

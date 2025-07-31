@@ -17,6 +17,8 @@ import InterviewPage from './pages/Interviews/InterviewPage';
 import Interview from './pages/Interviews/Interview';
 import AudioPage from './pages/AudioBooks/AudioPage';
 import AudioBook from './pages/AudioBooks/Audiobook';
+import AnimeDetail from './pages/Anime/AnimeDetail';
+import Anime from './pages/Anime/Anime';
 
 function App() {
   const aboutRef = useRef(null);
@@ -61,6 +63,9 @@ function App() {
 
       <Route path="/audiobooks" element={<AudioPage />} />
       <Route path="/audiobooks/:slug" element={<AudioBook />} />
+
+      <Route path="/anime" element={<Anime />} />
+      <Route path="/anime/:slug" element={<AnimeDetail />} />
 
     </Routes>
   );
