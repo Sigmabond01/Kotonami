@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { anime } from "./Animedata";
+import { Link } from "react-router-dom";
 
 export default function AnimeDetail() {
   const { slug } = useParams();
@@ -24,9 +25,14 @@ export default function AnimeDetail() {
             <span>Level: {item.level}</span>
             <span>Subs: {item.subtitles.join(", ")}</span>
           </div>
+          <Link
+  to={`/anime/${item.slug}`}
+  className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"
+>
           <button className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
             Watch Now
           </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -19,6 +19,7 @@ import AudioPage from './pages/AudioBooks/AudioPage';
 import AudioBook from './pages/AudioBooks/Audiobook';
 import AnimeDetail from './pages/Anime/AnimeDetail';
 import Anime from './pages/Anime/Anime';
+import AnimeWatch from './pages/Anime/AnimeWatch';
 
 function App() {
   const aboutRef = useRef(null);
@@ -66,6 +67,7 @@ function App() {
 
       <Route path="/anime" element={<Anime />} />
       <Route path="/anime/:slug" element={<AnimeDetail />} />
+      <Route path="/anime/:slug/watch" element={<AnimeWatch />} />
 
     </Routes>
   );
