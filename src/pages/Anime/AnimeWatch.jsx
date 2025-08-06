@@ -1,57 +1,79 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
-import { anime } from "./Animedata";
+import axios from "axios";
+import { useVideoSubtitles } from "../../hooks/useVideoSubtitles";
+import EpisodeList from "../../components/EpisodeList";
+import AnimeInfoSidebar from "../../components/AnimeInfoSidebar";
+import InteractiveSubtitle from "../../components/InteractiveSubtitle";
 
 export default function AnimeWatch() {
   const { slug } = useParams();
-  const item = anime.find((a) => a.slug === slug);
+  const [item, setItem] = useState(null);
+  const [selectedEpisode, setSelectedEpisode] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Guard: no matching anime
+  useEffect(() => {
+    const fetchAnimeData = async () => {
+      if (!slug) return;
+      try {
+        const response = await axios.get(`http://localhost:3001/api/anime/${slug}`);
+        setItem(response.data);
+        if (response.data.episodes && response.data.episodes.length > 0) {
+          setSelectedEpisode(response.data.episodes[0]);
+        }
+      } catch (error) {
+        console.error("Failed to fetch anime data", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchAnimeData();
+  }, [slug]);
+
+  const { 
+    videoContainerRef, 
+    activeJapaneseSubtitle, 
+    activeEnglishSubtitle, 
+    currentVideoTime, 
+    subtitleOffset, 
+    adjustSubtitleOffset 
+  } = useVideoSubtitles(selectedEpisode ? selectedEpisode.embedUrl : null);
+  
+  if (loading) return <div className="text-white p-10">Loading...</div>;
   if (!item) return <div className="text-white p-10">Anime not found.</div>;
 
-  const [selectedEpisode, setSelectedEpisode] = useState(item.episodes?.[0] || null);
-
   return (
-    <div className="min-h-screen bg-[#121212] text-white p-6">
-      <div className="max-w-5xl mx-auto space-y-8 font-mincho">
-        {/* --- Title --- */}
-        <h1 className="text-3xl font-bold">{item.title}</h1>
+    <div className="min-h-screen bg-gradient-to-r from-[#182c18] to-[#012903] text-white font-mincho p-4 lg:p-6">
+      <main className="w-full mx-auto flex flex-col lg:flex-row gap-6">
+        
+        <EpisodeList 
+          episodes={item.episodes} 
+          currentEpisode={selectedEpisode} 
+          onSelectEpisode={setSelectedEpisode} 
+        />
 
-        {/* --- Video Player --- */}
-        {selectedEpisode && (
-          <div className="aspect-video w-full">
-            <iframe
-              width="100%"
-              height="100%"
-              src={selectedEpisode.embedUrl}
-              title={`Episode ${selectedEpisode.number}`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="rounded-xl"
-            ></iframe>
-            <p className="text-sm text-white/60 mt-2 text-center">
-              Episode {selectedEpisode.number}: {selectedEpisode.title}
-            </p>
+        <div key={selectedEpisode ? selectedEpisode.embedUrl : 'no-episode'} className="flex-1 space-y-4">
+          <div ref={videoContainerRef} className="relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg bg-black">
+            <div id="youtube-player" className="absolute top-0 left-0 w-full h-full"></div>
           </div>
-        )}
-
-        {/* --- Episode Buttons --- */}
-        <div className="flex flex-wrap gap-3 justify-center">
-          {item.episodes?.map((ep) => (
-            <button
-              key={ep.number}
-              onClick={() => setSelectedEpisode(ep)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold border ${
-                selectedEpisode?.number === ep.number
-                  ? "bg-green-600 border-green-700 text-white"
-                  : "bg-white/10 border-white/20 text-white/80 hover:bg-green-800 hover:text-white"
-              }`}
-            >
-              Ep {ep.number}
-            </button>
-          ))}
+          
+          <div className="space-y-2">
+            <div className="text-center min-h-[3rem] flex items-center justify-center">
+              <InteractiveSubtitle text={activeJapaneseSubtitle?.text} />
+            </div>
+            <div className="text-center text-lg text-white/70 min-h-[2.5rem] flex items-center justify-center">
+              <span className={`transition-opacity duration-300 ${
+                activeEnglishSubtitle?.text ? 'opacity-100' : 'opacity-40'
+              }`}>
+                {activeEnglishSubtitle?.text || ''}
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <AnimeInfoSidebar anime={item} />
+
+      </main>
     </div>
   );
 }

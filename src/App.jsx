@@ -67,7 +67,7 @@ function App() {
 
       <Route path="/anime" element={<Anime />} />
       <Route path="/anime/:slug" element={<AnimeDetail />} />
-      <Route path="/anime/:slug/watch" element={<AnimeWatch />} />
+      <Route path="/watch/:slug" element={<AnimeWatch />} />
 
     </Routes>
   );
