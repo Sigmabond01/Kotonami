@@ -20,6 +20,8 @@ import AudioBook from './pages/AudioBooks/Audiobook';
 import AnimeDetail from './pages/Anime/AnimeDetail';
 import Anime from './pages/Anime/Anime';
 import AnimeWatch from './pages/Anime/AnimeWatch';
+import { VideoExample } from './components/VideoExample';
+import Index from './pages/Index';
 
 function App() {
   const aboutRef = useRef(null);
@@ -46,10 +48,7 @@ function App() {
         path="/"
         element={
           <>
-            <Hero />
-            <div ref={aboutRef}><About /></div>
-            <div ref={featureRef}><FeaturesSectionDemo /></div>
-            <Footer />
+            <Index />
           </>
         }
       />

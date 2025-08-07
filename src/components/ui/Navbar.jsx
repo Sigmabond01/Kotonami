@@ -23,8 +23,8 @@ export function Navbar() {
     return (
         <nav className={`
             absolute top-6 left-1/2 transform -translate-x-1/2 z-50
-            w-[90%] max-w-6xl px-6 py-4
-            transition-all duration-300
+            w-[90%] max-w-7xl py-4
+            transition-all duration-300 lg:max-w-8xl
         `}>
             <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
@@ -36,12 +36,12 @@ export function Navbar() {
                             <Link 
                                 to={link.to}
                                 onClick={() => handleLinkClick(link.name)}
-                                className={`relative text-white font-medium transition-all duration-300 hover:text-green-400 group ${
-                                    activeLink === link.name ? "text-green-400" : ""
+                                className={`relative text-white font-medium transition-all duration-300 hover:text-[#8aadc2] group ${
+                                    activeLink === link.name ? "text-white" : ""
                                 }`}
                             >
                                 {link.name}
-                                <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-green-400 transform transition-transform duration-300 ${
+                                <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 transform transition-transform duration-300 ${
                                     activeLink === link.name ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                                 }`}></span>
                             </Link>

@@ -10,7 +10,7 @@ export function AnimeCard({ anime }) {
             alt={anime.title}
             className="w-full h-[320px] object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
         <div className="p-4 flex flex-col gap-2">
           <h3 className="text-lg text-white truncate font-semibold group-hover:text-green-300 transition-colors">

@@ -2,8 +2,7 @@ import { BookOpen, Target, Brain, GraduationCap } from "lucide-react";
 
 export function About() {
   return (
-    <section className="font-mincho min-h-screen bg-[url('./bg2.jpg')]  bg-cover bg-no-repeat bg-bottom relative text-white">
-      <div className="absolute inset-0 bg-black/50 z-0 backdrop-blur-sm " />
+    <section className="font-mincho relative text-white">
       <div className="z-10 relative">
         <h1 className="flex justify-center text-7xl pt-16">ABOUT</h1>
         <div className="max-w-6xl mx-auto font-medium pt-8 px-4">
