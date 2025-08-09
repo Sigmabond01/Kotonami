@@ -74,11 +74,65 @@ import { InterviewCard } from "./interviewCard";
   thumbnail: "https://img.youtube.com/vi/QK400iXefwg/hqdefault.jpg",
   description: "A Japanese street interview exploring what native speakers think about the difficulty of their own language."
 },
+  {
+    "slug": "japanese-yakuza-opinions",
+    "title": "What Do Japanese Really Think About the Yakuza?",
+    "thumbnail": "https://img.youtube.com/vi/2RjcdkzdqKk/maxresdefault.jpg",
+    "description": "Street interviews reveal candid thoughts on Japan’s notorious underworld group."
+  },
+  {
+    "slug": "hardest-english-words-japan",
+    "title": "Can Japanese People Pronounce the HARDEST English Words?",
+    "thumbnail": "https://img.youtube.com/vi/dHceVBQ0dfs/maxresdefault.jpg",
+    "description": "See how native Japanese speakers handle some of the trickiest English pronunciations."
+  },
+  {
+    "slug": "japan-ai-robots-opinions",
+    "title": "Interviewing Japanese People About AI, Technology, and ROBOTS",
+    "thumbnail": "https://img.youtube.com/vi/8qXYy1kOSmA/maxresdefault.jpg",
+    "description": "Public opinions on Japan’s evolving relationship with AI and futuristic tech."
+  },
+  {
+    "slug": "rude-in-japan",
+    "title": "What's Considered Rude In Japan? | Street Interview",
+    "thumbnail": "https://img.youtube.com/vi/Vk2l_ivkOFI/maxresdefault.jpg",
+    "description": "Japanese locals share surprising social taboos and cultural no-nos."
+  },
+  {
+    "slug": "common-japanese-words",
+    "title": "Words Japanese People Use Everyday",
+    "thumbnail": "https://img.youtube.com/vi/sbICTVKKHyw/hqdefault.jpg",
+    "description": "A quick dive into the most common phrases and words in daily Japanese life."
+  },
+  {
+    "slug": "how-not-to-text-japanese-girls",
+    "title": "How NOT to Text Japanese Girls | Japan Street Interviews",
+    "thumbnail": "https://img.youtube.com/vi/DUr1CJAK50w/maxresdefault.jpg",
+    "description": "Locals reveal texting mistakes foreigners make when chatting with Japanese women."
+  },
+  {
+    "slug": "outrageous-kanji-challenge",
+    "title": "I Paid Japanese People to Read OUTRAGEOUSLY Difficult Kanji",
+    "thumbnail": "https://img.youtube.com/vi/oHBSDbBn3d0/maxresdefault.jpg",
+    "description": "Watch as Japanese natives struggle with insanely hard kanji characters."
+  },
+  {
+    "slug": "dreadlocks-trend-japan",
+    "title": "Why Dreadlocks Are Trending In Japan",
+    "thumbnail": "https://img.youtube.com/vi/FCIc-xiZAP0/maxresdefault.jpg",
+    "description": "Exploring the rising popularity of dreadlocks in Japanese fashion culture."
+  },
+  {
+    "slug": "japanese-job-interview-tips",
+    "title": "How to have a Japanese interview",
+    "thumbnail": "https://img.youtube.com/vi/pz48MM_urnw/maxresdefault.jpg",
+    "description": "A guide to nailing job interviews in Japan with cultural finesse."
+  }
     ];
 
     export default function InterviewPage() {
       return (
-        <div className="flex min-h-screen bg-[#344532] text-white">
+        <div className="flex min-h-screen bg-gradient-to-r from-[#0f172a]  to-[#334155] text-white">
           <Sidebar />
           <main className="flex-1 ml-16 md:ml-60 p-6">
             <h1 className="text-3xl font-bold mb-6">Daily Life in Japan</h1>

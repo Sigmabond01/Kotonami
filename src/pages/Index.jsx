@@ -4,10 +4,10 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { About } from '../components/About';
 import { FeaturesSectionDemo } from '../components/Features';
 import { Footer } from '../components/Footer';
-import Hero from '../components/Hero';
-import { VideoExample2 } from '../components/ui/VideoExample2';
+import { VideoExample2 } from '../components/VideoExample2';
 
 import MidnightMistWrapper from '../components/ui/MidnightMist';
+import { Hero } from '../components/Hero';
  
 export default function Index() {
  const aboutRef = useRef(null);

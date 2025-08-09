@@ -3,6 +3,8 @@
     import axios from "axios";
     import { Sidebar } from "../../components/ui/Sidebar";
     import { useVideoSubtitles } from "../../hooks/useVideoSubtitles";
+    import { Link } from "react-router-dom";
+    import { ArrowLeft } from "lucide-react";
 
     const videos = {
 "easyjp-what-did-you-do-today": {
@@ -65,6 +67,51 @@
   embedUrl: "https://www.youtube.com/embed/QK400iXefwg",
   description: "A Japanese street interview exploring what native speakers think about the difficulty of their own language. Great listening practice and insight into cultural perspectives on learning and using Japanese as a native speaker or foreigner."
 },
+  "japanese-yakuza-opinions": {
+    title: "What Do Japanese Really Think About the Yakuza?",
+    embedUrl: "https://www.youtube.com/embed/2RjcdkzdqKk",
+    description: "Through candid street interviews, locals share their unfiltered opinions about the Yakuza—Japan’s infamous organized crime syndicate. From fear and respect to curiosity and indifference, the video captures a spectrum of perspectives grounded in real-life encounters and cultural context."
+  },
+  "hardest-english-words-japan": {
+    title: "Can Japanese People Pronounce the HARDEST English Words?",
+    embedUrl: "https://www.youtube.com/embed/dHceVBQ0dfs",
+    description: "In a playful linguistic challenge, Japanese speakers attempt to pronounce notoriously difficult English words. The mix of determination, mispronunciations, and laughter reveals both the beauty and struggle of crossing language barriers."
+  },
+  "japan-ai-robots-opinions": {
+    title: "Interviewing Japanese People About AI, Technology, and ROBOTS",
+    embedUrl: "https://www.youtube.com/embed/8qXYy1kOSmA",
+    description: "Exploring Japan’s deep integration with advanced technology, this video captures everyday citizens’ thoughts on AI, automation, and robotics—from optimism about innovation to caution over societal impacts."
+  },
+  "rude-in-japan": {
+    title: "What's Considered Rude In Japan? | Street Interview",
+    embedUrl: "https://www.youtube.com/embed/Vk2l_ivkOFI",
+    description: "A cultural deep-dive into Japanese etiquette, revealing surprising social missteps that can leave a bad impression. Locals highlight small yet meaningful gestures that define politeness in Japan."
+  },
+  "common-japanese-words": {
+    title: "Words Japanese People Use Everyday",
+    embedUrl: "https://www.youtube.com/embed/sbICTVKKHyw",
+    description: "A look into the heartbeat of daily Japanese conversation, this video introduces common phrases that shape interactions—from greetings to casual slang—offering a linguistic snapshot of modern Japan."
+  },
+  "how-not-to-text-japanese-girls": {
+    title: "How NOT to Text Japanese Girls | Japan Street Interviews",
+    embedUrl: "https://www.youtube.com/embed/DUr1CJAK50w",
+    description: "Locals discuss common mistakes foreigners make when texting Japanese women, revealing cultural nuances in communication style, pacing, and tone that can make or break connections."
+  },
+  "outrageous-kanji-challenge": {
+    title: "I Paid Japanese People to Read OUTRAGEOUSLY Difficult Kanji",
+    embedUrl: "https://www.youtube.com/embed/oHBSDbBn3d0",
+    description: "A hilarious and humbling challenge where Japanese natives attempt to read extremely rare and complex kanji. The struggle shows the vastness of Japan’s writing system and the limits of everyday literacy."
+  },
+  "dreadlocks-trend-japan": {
+    title: "Why Dreadlocks Are Trending In Japan",
+    embedUrl: "https://www.youtube.com/embed/FCIc-xiZAP0",
+    description: "An exploration of how dreadlocks have become a rising fashion trend in Japan, blending global influences with local street style. The video examines perceptions, cultural adoption, and the artistry behind the look."
+  },
+  "japanese-job-interview-tips": {
+    title: "How to have a Japanese interview",
+    embedUrl: "https://www.youtube.com/embed/pz48MM_urnw",
+    description: "A practical and cultural guide to navigating Japanese job interviews. It covers key etiquette, expected behaviors, and the subtle social cues that can set candidates apart in a highly formal process."
+  }
     };
 
     export default function Interview() {
@@ -92,34 +139,42 @@
       const [showWordDetailsPanel, setShowWordDetailsPanel] = useState(false);
 
       const handleJapaneseSubtitleClick = async (sentence) => {
-        setLoadingWordData(true);
-        setErrorWordData(null);
-        setSelectedWordData(null);
-        setShowWordDetailsPanel(true);
+    setLoadingWordData(true);
+    setErrorWordData(null);
+    setSelectedWordData(null);
+    setShowWordDetailsPanel(true);
 
-        try {
-          const response = await axios.post('/api/parse-japanese-text', { sentence });
-          setSelectedWordData(response.data);
-        } catch (err) {
-          console.error("Error fetching the word data: ", err);
-          setErrorWordData("Failed to get word breakdown" + (err.response?.data?.details || err.message));
-        } finally {
-          setLoadingWordData(false);
-        }
-      };
-
+    try {
+        const response = await axios.post('http://localhost:3001/api/parse-japanese-text', {
+            sentence: sentence
+        });
+        setSelectedWordData(response.data);
+    } catch (err) {
+        console.error("Error fetching the word data: ", err);
+        setErrorWordData("Failed to get word breakdown" + (err.response?.data?.details || err.message));
+    } finally {
+        setLoadingWordData(false);
+    }
+};
       if (!video) {
         return <div className="text-white p-10">Video not found</div>
       }
 
       return (
-        <div className="flex min-h-screen bg-[#03240f] text-white font-mincho">
+        <div className="flex min-h-screen bg-gradient-to-r from-[#0f172a]  to-[#334155] text-white font-mincho">
           <Sidebar />
           <main className="flex-1 ml-16 md:ml-60 px-6 py-10 flex flex-col lg:flex-row gap-6">
             {/* Left Column: Video and Subtitles */}
             <div className="flex-1">
               <h1 className="text-2xl font-bold mb-4">{video.title}</h1>
               <p className="text-sm text-gray-300 mb-6">{video.description}</p>
+             <Link
+  to="/interviews"
+  className="group inline-flex items-center gap-2 px-4 py-2 text-blue-400 hover:text-white"
+>
+  <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+  <span className="font-medium">Return to Interviews</span>
+</Link>
               <div
                 ref={videoContainerRef}
                 className={`relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg mb-6 bg-black ${isFullscreen ? 'fixed top-0 left-0 w-screen h-screen z-50 rounded-none' : ''}`}

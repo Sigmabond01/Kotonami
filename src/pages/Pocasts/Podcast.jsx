@@ -92,34 +92,43 @@
       const [showWordDetailsPanel, setShowWordDetailsPanel] = useState(false);
 
       const handleJapaneseSubtitleClick = async (sentence) => {
-        setLoadingWordData(true);
-        setErrorWordData(null);
-        setSelectedWordData(null);
-        setShowWordDetailsPanel(true);
+    setLoadingWordData(true);
+    setErrorWordData(null);
+    setSelectedWordData(null);
+    setShowWordDetailsPanel(true);
 
-        try {
-          const response = await axios.post('/api/parse-japanese-text', { sentence });
-          setSelectedWordData(response.data);
-        } catch (err) {
-          console.error("Error fetching the word data: ", err);
-          setErrorWordData("Failed to get word breakdown" + (err.response?.data?.details || err.message));
-        } finally {
-          setLoadingWordData(false);
-        }
-      };
+    try {
+        const response = await axios.post('http://localhost:3001/api/parse-japanese-text', {
+            sentence: sentence
+        });
+        setSelectedWordData(response.data);
+    } catch (err) {
+        console.error("Error fetching the word data: ", err);
+        setErrorWordData("Failed to get word breakdown" + (err.response?.data?.details || err.message));
+    } finally {
+        setLoadingWordData(false);
+    }
+};
 
       if (!video) {
         return <div className="text-white p-10">Video not found</div>
       }
 
       return (
-        <div className="flex min-h-screen bg-[#03240f] text-white font-mincho">
+        <div className="flex min-h-screen bg-gradient-to-r from-[#0f172a]  to-[#334155] text-white font-mincho">
           <Sidebar />
           <main className="flex-1 ml-16 md:ml-60 px-6 py-10 flex flex-col lg:flex-row gap-6">
             {/* Left Column: Video and Subtitles */}
             <div className="flex-1">
               <h1 className="text-2xl font-bold mb-4">{video.title}</h1>
               <p className="text-sm text-gray-300 mb-6">{video.description}</p>
+              <Link
+  to="/podcasts"
+  className="group inline-flex items-center gap-2 px-4 py-2 text-blue-400 hover:text-white bg-transparent hover:bg-blue-500/10 border border-blue-400/30 hover:border-blue-400 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5"
+>
+  <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+  <span className="font-medium">Return to Podcasts</span>
+</Link>
               <div
                 ref={videoContainerRef}
                 className={`relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg mb-6 bg-black ${isFullscreen ? 'fixed top-0 left-0 w-screen h-screen z-50 rounded-none' : ''}`}
@@ -153,7 +162,6 @@
                   </div>
                 )}
               </div>
-              {/* Removed: Original Full Subtitles Section */}
             </div>
             {/* Right Column: Word Details Panel */}
             {showWordDetailsPanel && (

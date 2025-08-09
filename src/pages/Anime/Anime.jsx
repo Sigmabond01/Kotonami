@@ -24,7 +24,7 @@ export default function Anime() {
   }, []);
 
   return (
-    <div className="flex bg-gradient-to-r from-[#182c18] to-[#012903] min-h-screen text-white font-mincho">
+    <div className="flex bg-gradient-to-r from-[#0f172a]  to-[#334155] min-h-screen text-white font-mincho">
       <Sidebar />
       <div className="flex-1 ml-16 md:ml-60 p-8">
         <Searchbar />

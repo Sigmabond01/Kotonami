@@ -78,7 +78,7 @@ import { AudioCard } from "./AudioCard";
 
     export default function AudioPage() {
       return (
-        <div className="flex min-h-screen bg-[#344532] text-white">
+        <div className="flex min-h-screen bg-gradient-to-r from-[#0f172a]  to-[#334155] text-white">
           <Sidebar />
           <main className="flex-1 ml-16 md:ml-60 p-6">
             <h1 className="text-3xl font-bold mb-6">Daily Life in Japan</h1>

@@ -16,8 +16,8 @@ export function AnimeCard({ anime }) {
           <h3 className="text-lg text-white truncate font-semibold group-hover:text-green-300 transition-colors">
             {anime.title}
           </h3>
-          <div className="flex items-center gap-2">
-            <span className="text-xs px-2 py-1 bg-green-800/80 rounded-full w-fit text-white">
+          <div className="flex items-center gap-6">
+            <span className="text-xs px-8 py-1 bg-blue-800/80 rounded-xl w-full text-white">
               {anime.level}
             </span>
             <p className="text-xs text-white/60">
