@@ -18,3 +18,32 @@
   background-size: cover;
   background-attachment: fixed;
 }
+
+.neon-text {
+    color: #e0e0e0;
+    font-weight: lighter;
+    text-shadow:
+        0 0 5px #8aadc2,
+        0 0 10px #8aadc2,
+        0 0 15px #8aadc2,
+        0 0 20px #8aadc2,
+        0 0 35px #8aadc2,
+        0 0 40px #8aadc2;
+    animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+            0 0 5px #8aadc2,
+            0 0 10px #8aadc2,
+            0 0 15px #8aadc2,
+            0 0 20px #8aadc2,
+            0 0 35px #8aadc2,
+            0 0 40px #8aadc2;
+    }
+    
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}

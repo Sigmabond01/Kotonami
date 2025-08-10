@@ -23,7 +23,7 @@ export function Navbar() {
     return (
         <nav className={`
             absolute top-6 left-1/2 transform -translate-x-1/2 z-50
-            w-[90%] max-w-7xl py-4
+            w-[100%] max-w-7xl py-4
             transition-all duration-300 lg:max-w-8xl
         `}>
             <div className="flex items-center justify-between">
