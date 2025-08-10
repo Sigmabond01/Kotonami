@@ -3,6 +3,8 @@
     import axios from "axios";
     import { Sidebar } from "../../components/ui/Sidebar";
     import { useVideoSubtitles } from "../../hooks/useVideoSubtitles";
+    import { Link } from "react-router-dom";
+    import { ArrowLeft } from "lucide-react";
 
     const videos = {
       "takashii-from-japan-goldrush": {
@@ -123,12 +125,12 @@
               <h1 className="text-2xl font-bold mb-4">{video.title}</h1>
               <p className="text-sm text-gray-300 mb-6">{video.description}</p>
               <Link
-  to="/podcasts"
-  className="group inline-flex items-center gap-2 px-4 py-2 text-blue-400 hover:text-white bg-transparent hover:bg-blue-500/10 border border-blue-400/30 hover:border-blue-400 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5"
->
-  <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
-  <span className="font-medium">Return to Podcasts</span>
-</Link>
+                                    to="/audiobooks"
+                                    className="group inline-flex items-center gap-2 py-2 text-blue-400 hover:text-blue-700 mb-6"
+                                  >
+                                    <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+                                      <span className="font-medium">Return to Audiobooks</span>
+                                </Link>
               <div
                 ref={videoContainerRef}
                 className={`relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg mb-6 bg-black ${isFullscreen ? 'fixed top-0 left-0 w-screen h-screen z-50 rounded-none' : ''}`}

@@ -9,7 +9,7 @@ export default function EpisodeList({ episodes, currentEpisode, onSelectEpisode 
             onClick={() => onSelectEpisode(ep)}
             className={`p-3 rounded-lg cursor-pointer transition-colors duration-200 flex items-center gap-4 ${
               currentEpisode?.number === ep.number
-                ? "bg-green-600/80 text-white font-bold"
+                ? "bg-blue-600/80 text-white font-bold"
                 : "bg-white/5 hover:bg-white/10"
             }`}
           >

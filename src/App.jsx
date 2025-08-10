@@ -1,5 +1,6 @@
 import './index.css';
 import { Routes, Route } from 'react-router-dom';
+import { motion, AnimatePresence } from "framer-motion";
 
 import  DailyLifePage  from './pages/DailyLife/DailyLifePage';
 import DailyLifeDetail from './pages/DailyLife/DailyLifeDetail';
@@ -18,6 +19,14 @@ import Index from './pages/Index';
 
 function App() {
   return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
     <Routes>
       <Route
         path="/"
@@ -44,6 +53,8 @@ function App() {
       <Route path="/watch/:slug" element={<AnimeWatch />} />
 
     </Routes>
+    </motion.div>
+    </AnimatePresence>
   );
 }
 

@@ -131,7 +131,7 @@
         toggleFullscreen,
         MaximizeIcon,
         MinimizeIcon,
-      } = useVideoSubtitles(video ? video.embedUrl : null);
+      } = useVideoSubtitles(video ? video.embedUrl : null, false);
 
       const [selectedWordData, setSelectedWordData] = useState(null);
       const [loadingWordData, setLoadingWordData] = useState(false);
@@ -169,12 +169,12 @@
               <h1 className="text-2xl font-bold mb-4">{video.title}</h1>
               <p className="text-sm text-gray-300 mb-6">{video.description}</p>
              <Link
-  to="/interviews"
-  className="group inline-flex items-center gap-2 px-4 py-2 text-blue-400 hover:text-white"
->
-  <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
-  <span className="font-medium">Return to Interviews</span>
-</Link>
+                                   to="/audiobooks"
+                                   className="group inline-flex items-center gap-2 py-2 text-blue-400 hover:text-blue-700 mb-6"
+                                 >
+                                   <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+                                     <span className="font-medium">Return to Audiobooks</span>
+                               </Link>
               <div
                 ref={videoContainerRef}
                 className={`relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg mb-6 bg-black ${isFullscreen ? 'fixed top-0 left-0 w-screen h-screen z-50 rounded-none' : ''}`}
