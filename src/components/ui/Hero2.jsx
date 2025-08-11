@@ -17,16 +17,16 @@ export default function Hero2() {
             <strong>Kotonami</strong> shows you how Japanese is really spoken through videos with dual subtitles.
             Click any word to see its meaning, hiragana, and JLPT level instantly.
           </p>
-          <div className="flex flex-wrap justify-center gap-6 pt-4">
+          <div className="flex flex-wrap justify-center gap-6 pt-6 text-xl">
             <button
               onClick={() => navigate("/", { state: { scrollTo: "about" } })}
-              className="px-8 py-3 bg-white/10 backdrop-blur-xl text-white border border-white/30 rounded-xl hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+              className="px-10 py-4 bg-white/10 backdrop-blur-xl text-white border border-white/30 rounded-xl hover:bg-white/20 hover:border-white/50 transition-all duration-300"
             >
               Explore now
             </button>
             <button
-              onClick={() => navigate("/login")}
-              className="px-8 py-3 bg-white/10 backdrop-blur-xl text-white border border-white/30 rounded-xl hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+              onClick={() => navigate("/register")}
+              className="px-10 py-4 bg-white/10 backdrop-blur-xl text-white border border-white/30 rounded-xl hover:bg-white/20 hover:border-white/50 transition-all duration-300"
             >
               Get started
             </button>

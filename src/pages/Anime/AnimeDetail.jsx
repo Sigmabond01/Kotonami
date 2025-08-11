@@ -4,6 +4,7 @@ import axios from "axios";
 import { ArrowLeft } from "lucide-react";
 import Logo from "../../components/ui/Logo";
 import Loader from "../../components/ui/Loader";
+import { Navbar } from "../../components/ui/navbar";
 
 export default function AnimeDetail() {
   const { slug } = useParams();
@@ -45,31 +46,31 @@ export default function AnimeDetail() {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-[#0f172a]  to-[#334155] text-white p-10 font-mincho">
-      <div className="flex justify-start py-0">
-        <a href="https://x.com/Sigmabond01" target="_blank"><Logo /></a>
+      <div className="flex justify-start mb-28">
+        <Navbar />
       </div>
-      <Link to="/"
-        className="group inline-flex p-52 items-center gap-2 py-0 text-blue-400 hover:text-blue-700 mb-6"
+      <Link to="/anime"
+        className="group inline-flex items-center gap-2 py-3 text-blue-400 hover:text-blue-700 mb-6"
       >
         <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
-        Return to Homepage
+        Return to Animes
       </Link>
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8">
+      <div className="max-w-8xl mx-auto flex flex-col md:flex-row gap-8">
         <img src={item.image} alt={item.title} className="rounded-xl w-full md:w-[400px] object-cover shadow-lg" />
         <div className="space-y-4 flex-1">
           <h1 className="text-4xl font-bold">{item.title}</h1>
+          <div className="pt-6 pb-6 space-x-6">
+            <Link to={`/watch/${item.slug}`} className="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-bold text-lg">
+              Watch Now
+            </Link>
+            <Link to='/' className="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-bold text-lg">
+              Back to Home
+            </Link>
+          </div>
           <p className="text-white/80 leading-relaxed">{item.description}</p>
           <div className="flex gap-4 text-sm text-white/60 pt-2">
             <span className="bg-blue-900/50 px-3 py-1 rounded-full">Level: {item.level}</span>
             <span className="bg-blue-900/50 px-3 py-1 rounded-full">Subs: {item.subtitles.join(", ")}</span>
-          </div>
-          <div className="pt-4 space-x-6">
-            <Link to={`/watch/${item.slug}`} className="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-bold text-lg">
-              Watch Now
-            </Link>
-            <Link to='/anime' className="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-bold text-lg">
-              Back to anime
-            </Link>
           </div>
         </div>
       </div>

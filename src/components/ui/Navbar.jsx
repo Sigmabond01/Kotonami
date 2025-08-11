@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "./Logo";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [activeLink, setActiveLink] = useState("Home");
+    const [activeLink, setActiveLink] = useState("");
+    const location = useLocation();
 
     const links = [
         { name: "Home", to: "/" },
@@ -15,22 +16,34 @@ export function Navbar() {
         { name: "Podcasts", to: "/podcasts" },
         { name: "Audiobooks", to: "/audiobooks" },
     ];
+
+    // Always sync active link to the URL
+    useEffect(() => {
+        const currentPath = location.pathname;
+        const foundLink = links.find(link => link.to === currentPath);
+        if (foundLink) {
+            setActiveLink(foundLink.name);
+        }
+    }, [location.pathname]);
+
     const handleLinkClick = (linkName) => {
         setActiveLink(linkName);
         setIsOpen(false);
     };
 
     return (
-        <nav className={`
+        <nav className="
             absolute top-6 left-1/2 transform -translate-x-1/2 z-50
-            w-[100%] max-w-7xl py-4
+            w-[100%] max-w-7xl py-2
             transition-all duration-300 lg:max-w-8xl
-        `}>
+        ">
             <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center">
                     <Logo />
                 </div>
-                <ul className="hidden md:flex items-center space-x-8">
+
+                {/* Desktop Nav */}
+                <ul className="hidden md:flex items-center space-x-12">
                     {links.map(link => (
                         <li key={link.name}>
                             <Link 
@@ -51,12 +64,12 @@ export function Navbar() {
 
                 {/* Auth Buttons */}
                 <div className="hidden md:flex items-center space-x-8 font-extrabold">
-                    <Link to="/login" className="text-white/80 hover:text-white transition duration-300 p-2 rounded-lg hover:bg-white/10">
+                    <Link to="/login" className="text-white/80 hover:text-white transition duration-300 p-2 rounded-xl hover:bg-white/10 bg-blue-950/80 px-6 py-2">
                         Login
                     </Link>
-                    <Link to="/register" className="text-white/80 hover:text-white transition duration-300 p-2 rounded-lg hover:bg-white/10">
-                        Register
-                    </Link>
+                    <a href="https://linktr.ee/Sigmabond01" target="_blank" className="text-white/80 hover:text-white transition duration-300 p-2 rounded-xl hover:bg-white/10 bg-blue-950/80 px-6 py-2">
+                        Socials
+                    </a>
                 </div>
 
                 {/* Mobile Menu Toggle */}

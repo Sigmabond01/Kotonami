@@ -86,7 +86,7 @@
         toggleFullscreen,
         MaximizeIcon,
         MinimizeIcon,
-      } = useVideoSubtitles(video ? video.embedUrl : null);
+      } = useVideoSubtitles(video ? video.embedUrl : null, false);
 
       const [selectedWordData, setSelectedWordData] = useState(null);
       const [loadingWordData, setLoadingWordData] = useState(false);

@@ -10,19 +10,16 @@ export function VideoExample() {
         <h2 className="text-center text-5xl pt-2">See Kotonami in Action</h2>
 
         <p className="text-center text-lg max-w-3xl mx-auto">
-          Watch Kotonami break down real Japanese subtitles into bite-sized,
+          See Kotonami break down real Japanese subtitles into bite-sized,
           interactive learning — real context, real sentences.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="w-full">
-            <video
-              controls
+            <img src="/animeex.png"
               className="w-full block rounded-lg max-h-[60vh] object-contain"
-              preload="metadata"
             >
-              <source src="/videos/kotonami-demo.mp4" type="video/mp4" />
-            </video>
+            </img>
           </div>
           <div className="w-full flex justify-center">
             <img
@@ -44,18 +41,14 @@ export function VideoExample() {
             />
           </div>
           <div className="w-full">
-            <video
-              controls
+            <img
+              src="/intex.png"
               className="w-full block rounded-lg max-h-[60vh] object-contain"
               preload="metadata"
             >
-              <source src="/videos/kotonami-demo.mp4" type="video/mp4" />
-            </video>
+            </img>
           </div>
         </div>
-
-        {/* safety clear */}
-        <div className="w-full" style={{clear: "both"}} />
       </div>
     </section>
   );
