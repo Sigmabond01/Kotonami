@@ -151,6 +151,7 @@ export default function AnimeWatch() {
                                 <p className="text-sm">
                                     Meaning: {wordInfo.meaning || "Not found"}
                                 </p>
+                                <p className="text-sm">JLPT: {wordInfo.jlpt}</p>
                             </div>
                         ))}
                 </div>

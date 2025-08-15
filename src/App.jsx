@@ -16,6 +16,8 @@ import AnimeDetail from './pages/Anime/AnimeDetail';
 import Anime from './pages/Anime/Anime';
 import AnimeWatch from './pages/Anime/AnimeWatch';
 import Index from './pages/Index';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -52,10 +54,15 @@ function App() {
       <Route path="/anime/:slug" element={<AnimeDetail />} />
       <Route path="/watch/:slug" element={<AnimeWatch />} />
 
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
     </Routes>
     </motion.div>
     </AnimatePresence>
   );
 }
+
+
 
 export default App;

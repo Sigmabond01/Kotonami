@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import Logo from "../../components/ui/Logo";
 import Loader from "../../components/ui/Loader";
 import { Navbar } from "../../components/ui/navbar";
+import { Footer } from "../../components/Footer";
 
 export default function AnimeDetail() {
   const { slug } = useParams();
@@ -74,6 +75,7 @@ export default function AnimeDetail() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
