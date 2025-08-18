@@ -1,78 +1,18 @@
-    import React, { useState } from "react";
-    import { useParams } from "react-router-dom";
+    import React, { useEffect, useState } from "react";
+    import { useParams, Link } from "react-router-dom";
     import axios from "axios";
     import { Sidebar } from "../../components/ui/Sidebar";
     import { useVideoSubtitles } from "../../hooks/useVideoSubtitles";
-    import { Link } from "react-router-dom";
     import { ArrowLeft } from "lucide-react";
 
-    const videos = {
-        "your-name-n5-audiobook": {
-  title: "Your Name Audiobook (JLPT N4/N5) | Learn Easy Japanese with Stories",
-  embedUrl: "https://www.youtube.com/embed/somEzKcCDVE",
-  description: "A simplified retelling of the hit film 'Your Name' tailored for beginner-level Japanese learners (JLPT N4/N5). This easy Japanese audiobook helps you improve listening skills through a familiar story, with natural narration and clear vocabulary."
-},
-"spirited-away-n5": {
-  title: "Spirited Away Audiobook (JLPT N4/N5) | Learn Easy Japanese with Stories",
-  embedUrl: "https://www.youtube.com/embed/tEoRxBLOMqg",
-  description: "A simplified audiobook adaptation of Spirited Away for JLPT N4/N5 learners. This story-focused lesson helps build vocabulary and listening comprehension with native pronunciation and slow, clear narration. Great for immersive learning."
-},
-"ogura-hyakunin-isshu-audiobook": {
-  title: "Ogura Hyakunin Isshu (Free Audio Book in Japanese)",
-  embedUrl: "https://www.youtube.com/embed/a94d3HlK_Cc",
-  description: "A free audiobook version of the famous Japanese poetry anthology Ogura Hyakunin Isshu, compiled by Fujiwara no Teika. This is an excellent resource for advanced learners interested in classical Japanese literature and listening practice rooted in historical context."
-},
-"howls-moving-castle-n5-part3": {
-  title: "Howl's Moving Castle: Easy Japanese Reading & Explanation (JLPT N4/N5, Part 3)",
-  embedUrl: "https://www.youtube.com/embed/kSZAmW63KC8",
-  description: "This is part 3 of an easy Japanese reading series based on Howl's Moving Castle. Tailored for JLPT N4/N5 learners, it features sentence-by-sentence explanations, vocabulary help, and grammar guidance to support natural comprehension and language acquisition."
-},
-"kouyahijiri-audiobook": {
-  title: "Kouyahijiri by Kyōka Izumi (Full Audiobook)",
-  embedUrl: "https://www.youtube.com/embed/hTWxrT6UAxs",
-  description: "A full-length Japanese audiobook of Kyōka Izumi’s 'Kouyahijiri' — a gothic tale set in the mountains. Known for its lush, expressive language and atmospheric storytelling, this is a rich resource for those delving into classical Japanese or literature-based immersion."
-},
-"kikis-delivery-ghibli": {
-  title: "Learn Japanese with Ghibli: Kiki's Delivery Service - Scene Description",
-  embedUrl: "https://www.youtube.com/embed/ZZHZXpDaV-c",
-  description: "This video breaks down scenes from Ghibli's *Kiki's Delivery Service* to help learners absorb natural Japanese in context. It’s ideal for JLPT N4/N5 learners aiming to bridge textbook Japanese with real-world usage through storytelling and visual cues."
-},
-"totoro-japanese-audiobook": {
-  title: "My Neighbor Totoro Audiobook (JLPT N4/N5)",
-  embedUrl: "https://www.youtube.com/embed/g4BslkuX6I0",
-  description: "This audiobook version of *My Neighbor Totoro* uses slow, clear Japanese tailored to JLPT N4/N5 learners. It’s an ideal tool for boosting listening skills and vocabulary through immersion in a beloved Ghibli story."
-},
-"straw-turnaround-folktale": {
-  title: "From Straw to a Great Turnaround – Easy Japanese Folktale",
-  embedUrl: "https://www.youtube.com/embed/rLwowh9SBa4",
-  description: "This is a retelling of the classic Japanese folktale about how a single piece of straw leads to great fortune. Narrated in slow, clear Japanese for JLPT N5 learners, this is perfect for listening comprehension and cultural understanding."
-},
-"gongitsune-audiobook": {
-  title: "『ごんぎつね』– Japanese Classical Story Audiobook",
-  embedUrl: "https://www.youtube.com/embed/J6KtEUu7fhU",
-  description: "This audiobook narrates 'Gongitsune', a well-known Japanese folktale about a mischievous fox and a human boy. The story is read in clear, fluent Japanese and offers excellent practice for learners familiar with JLPT N4–N3 level vocabulary."
-},
-"toshisyun-akutagawa": {
-  title: "Toshisyun by Ryunosuke Akutagawa (Full Audiobook)",
-  embedUrl: "https://www.youtube.com/embed/cDPlxiHqcEw",
-  description: "A timeless short story by literary master Ryunosuke Akutagawa, 'Toshisyun' explores the journey of a young man seeking power under the mentorship of a wise hermit. This audiobook, read in Japanese, is perfect for learners interested in classical language, moral storytelling, and Japanese literature."
-},
-"restaurant-of-many-orders": {
-  title: "『注文の多い料理店』– Kenji Miyazawa Audiobook",
-  embedUrl: "https://www.youtube.com/embed/q-o8i-5zSWs",
-  description: "This audiobook presents Kenji Miyazawa's famous short story 'The Restaurant of Many Orders'. It’s a bizarre tale about two hunters who get more than they bargained for at a mysterious restaurant. Narrated clearly in Japanese, it’s excellent for JLPT N4–N3 listeners aiming to immerse in classic literature."
-},
-"poverty-god-folktale": {
-  title: "The One Living in the House Was… the Poverty God｜Japanese Folktale",
-  embedUrl: "https://www.youtube.com/embed/aNltAtr0pOE",
-  description: "This folktale narrated in simple Japanese tells the story of a man who discovers that the god of poverty has made itself at home in his house. With clear narration and basic vocabulary, this video is perfect for JLPT N5 learners wanting to improve their listening comprehension through traditional Japanese storytelling."
-},
-    };
+
 
     export default function AudioBook() {
       const { slug } = useParams();
-      const video = videos[slug];
-
+      const { slug } = useParams();
+      const [video, setVideo] = useState(null);
+      const [loading, setLoading] = useState(true);
+      const [error, setError] = useState(null);
       const {
         japaneseSubtitles,
         englishSubtitles,
@@ -93,7 +33,22 @@
       const [errorWordData, setErrorWordData] = useState(null);
       const [showWordDetailsPanel, setShowWordDetailsPanel] = useState(false);
 
-      const handleJapaneseSubtitleClick = async (sentence) => {
+      useEffect(() => {
+        const fetchVideo = async () => {
+          try {
+            const response = await axios.get(`http://localhost:3001/api/audiobooks/${slug}`);
+            setVideo(response.data);
+          } catch (err) {
+            setError("Failed to fetch vid data bro");
+            console.error(err);
+          } finally {
+            setLoading(false);
+          }
+        };
+        fetchVideo();
+      }, [slug])
+
+    const handleJapaneseSubtitleClick = async (sentence) => {
     setLoadingWordData(true);
     setErrorWordData(null);
     setSelectedWordData(null);
@@ -111,6 +66,14 @@
         setLoadingWordData(false);
     }
 };
+
+      if(loading) {
+        return <div className="text-white p-10">Loading video...</div>;
+      }
+
+      if(error) {
+        return <div className="text-white p-10">{error}</div>;
+      }
 
       if (!video) {
         return <div className="text-white p-10">Video not found</div>
