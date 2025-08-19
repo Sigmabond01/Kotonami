@@ -9,7 +9,6 @@
 
     export default function AudioBook() {
       const { slug } = useParams();
-      const { slug } = useParams();
       const [video, setVideo] = useState(null);
       const [loading, setLoading] = useState(true);
       const [error, setError] = useState(null);
