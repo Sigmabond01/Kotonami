@@ -1,143 +1,43 @@
 import { Sidebar } from "../../components/ui/Sidebar";
 import { InterviewCard } from "./interviewCard";
-
-    const interview = [
-{
-  slug: "easyjp-what-did-you-do-today",
-  title: "What Did You Do Today? | Easy Japanese Interview (N5–N4)",
-  thumbnail: "https://img.youtube.com/vi/QaExGOtWbac/maxresdefault.jpg",
-  description: "Beginner-friendly Japanese interview focused on daily activities. Ideal for N5–N4 learners looking to improve listening with simple questions and natural responses."
-},
-{
-  slug: "why-japan-so-cheap",
-  title: "Why Is Japan So Cheap Now? | Japanese Interview",
-  thumbnail: "https://img.youtube.com/vi/C0FSpSe50m0/maxresdefault.jpg",
-  description: "A native Japanese interview discussing Japan's current economic situation and why prices feel lower compared to other countries. Great for intermediate listeners looking to pick up real-world vocabulary and insights."
-},
-{
-  slug: "japanese-elders-foreigners",
-  title: "Do Japanese Elders Like Foreigners in Japan? | Street Interview",
-  thumbnail: "https://img.youtube.com/vi/TbqtCm8q_G4/maxresdefault.jpg",
-  description: "Street interviews with elderly Japanese citizens sharing their honest thoughts about foreigners in Japan. Candid opinions, cultural insights, and real-life Japanese listening practice."
-},
-{
-  slug: "ex-yakuza-confession",
-  title: "Confessions of Ex-Yakuza Leader [ENG CC]",
-  thumbnail: "https://img.youtube.com/vi/Fd4nlMmda_I/maxresdefault.jpg",
-  description: "A rare interview with a former Yakuza boss. He opens up about his criminal past, the code of the Yakuza, and life after leaving the organization."
-},
-{
-  slug: "things-foreigners-shouldnt-do",
-  title: "Things Foreigners Should NEVER Do - Japanese Interview",
-  thumbnail: "https://img.youtube.com/vi/tTBzNtEq47U/maxresdefault.jpg",
-  description: "Japanese locals share candid opinions on what behaviors foreigners should avoid in Japan. A cultural reality check for visitors and expats."
-},
-{
-  slug: "bald-man-dating-japan",
-  title: "Would You Date a Bald Man? - Japanese Interview",
-  thumbnail: "https://img.youtube.com/vi/t63dNVP08gs/maxresdefault.jpg",
-  description: "A lighthearted Japanese street interview asking locals if they'd date a bald guy. Surprising answers reveal cultural views on appearance and romance."
-},
-{
-  slug: "japanese-elders-regrets",
-  title: "Japanese Elders Tell Us Their Biggest Regrets",
-  thumbnail: "https://img.youtube.com/vi/PAzHMt77tjk/maxresdefault.jpg",
-  description: "Japanese seniors open up about their deepest regrets in life. A reflective and emotional street interview exploring lessons from the past."
-},
-{
-  slug: "japan-tourist-warnings",
-  title: "\"Tourists, please don’t do this here\" from Japanese locals",
-  thumbnail: "https://img.youtube.com/vi/fXV89VQ5dJQ/maxresdefault.jpg",
-  description: "Locals in Japan share what tourists often do wrong—etiquette tips straight from the streets of Japan."
-},
-{
-  slug: "japan-confess-crush",
-  title: "Asking Strangers in Japan to Confess to Their CRUSH",
-  thumbnail: "https://img.youtube.com/vi/VPgvmzeQFq8/maxresdefault.jpg",
-  description: "Would you confess your feelings on camera? Japanese strangers open up about their secret crushes in this bold street interview."
-},
-{
-  slug: "morning-routine-easy-jp",
-  title: "Easy Japanese Interview - Morning Routine (N5-N4)",
-  thumbnail: "https://img.youtube.com/vi/8kQCtx9Ff0A/maxresdefault.jpg",
-  description: "Simple Japanese interview about daily morning routines. Great for N5–N4 learners to build listening and vocab."
-},
-{
-  slug: "why-jp-salarymen-work-hard",
-  title: "Why Japanese Salarymen Work So Hard",
-  thumbnail: "https://img.youtube.com/vi/25kp8rvWNJM/sddefault.jpg",
-  description: "Street interview digging into the work culture of Japanese salarymen. Insights on mindset, routine, and expectations."
-},
-{
-  slug: "do-japanese-people-think-japanese-is-difficult",
-  title: "Do Japanese People Think Japanese is Difficult? (Interview)",
-  thumbnail: "https://img.youtube.com/vi/QK400iXefwg/hqdefault.jpg",
-  description: "A Japanese street interview exploring what native speakers think about the difficulty of their own language."
-},
-  {
-    "slug": "japanese-yakuza-opinions",
-    "title": "What Do Japanese Really Think About the Yakuza?",
-    "thumbnail": "https://img.youtube.com/vi/2RjcdkzdqKk/maxresdefault.jpg",
-    "description": "Street interviews reveal candid thoughts on Japan’s notorious underworld group."
-  },
-  {
-    "slug": "hardest-english-words-japan",
-    "title": "Can Japanese People Pronounce the HARDEST English Words?",
-    "thumbnail": "https://img.youtube.com/vi/dHceVBQ0dfs/maxresdefault.jpg",
-    "description": "See how native Japanese speakers handle some of the trickiest English pronunciations."
-  },
-  {
-    "slug": "japan-ai-robots-opinions",
-    "title": "Interviewing Japanese People About AI, Technology, and ROBOTS",
-    "thumbnail": "https://img.youtube.com/vi/8qXYy1kOSmA/maxresdefault.jpg",
-    "description": "Public opinions on Japan’s evolving relationship with AI and futuristic tech."
-  },
-  {
-    "slug": "rude-in-japan",
-    "title": "What's Considered Rude In Japan? | Street Interview",
-    "thumbnail": "https://img.youtube.com/vi/Vk2l_ivkOFI/maxresdefault.jpg",
-    "description": "Japanese locals share surprising social taboos and cultural no-nos."
-  },
-  {
-    "slug": "common-japanese-words",
-    "title": "Words Japanese People Use Everyday",
-    "thumbnail": "https://img.youtube.com/vi/sbICTVKKHyw/hqdefault.jpg",
-    "description": "A quick dive into the most common phrases and words in daily Japanese life."
-  },
-  {
-    "slug": "how-not-to-text-japanese-girls",
-    "title": "How NOT to Text Japanese Girls | Japan Street Interviews",
-    "thumbnail": "https://img.youtube.com/vi/DUr1CJAK50w/maxresdefault.jpg",
-    "description": "Locals reveal texting mistakes foreigners make when chatting with Japanese women."
-  },
-  {
-    "slug": "outrageous-kanji-challenge",
-    "title": "I Paid Japanese People to Read OUTRAGEOUSLY Difficult Kanji",
-    "thumbnail": "https://img.youtube.com/vi/oHBSDbBn3d0/maxresdefault.jpg",
-    "description": "Watch as Japanese natives struggle with insanely hard kanji characters."
-  },
-  {
-    "slug": "dreadlocks-trend-japan",
-    "title": "Why Dreadlocks Are Trending In Japan",
-    "thumbnail": "https://img.youtube.com/vi/FCIc-xiZAP0/maxresdefault.jpg",
-    "description": "Exploring the rising popularity of dreadlocks in Japanese fashion culture."
-  },
-  {
-    "slug": "japanese-job-interview-tips",
-    "title": "How to have a Japanese interview",
-    "thumbnail": "https://img.youtube.com/vi/pz48MM_urnw/maxresdefault.jpg",
-    "description": "A guide to nailing job interviews in Japan with cultural finesse."
-  }
-    ];
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
     export default function InterviewPage() {
+      const [interviews, setInterviews] = useState([]);
+      const [loading, setLoading] = useState(true);
+      const [error, setError] = useState(null);
+
+      useEffect(() => {
+        const fetchInterviews = async () => {
+          try {
+            const response = await axios.get('http://localhost:3003/api/interviews');
+            setInterviews(response.data);
+          } catch (err) {
+            console.error("Failed to fetch interviews:", err);
+            setError("Could not load vids. Try again!");
+          } finally {
+            setLoading(false);
+          }
+        };
+
+        fetchInterviews();
+      }, []);
+
+      if(loading) {
+        return <div className="text-white p-10">Loading..</div>
+      }
+      if(error) {
+        return <div className="text-white p-10">{error}</div>
+      }
+
       return (
         <div className="flex min-h-screen bg-gradient-to-r from-[#0f172a]  to-[#334155] text-white">
           <Sidebar />
           <main className="flex-1 ml-16 md:ml-60 p-6">
             <h1 className="text-3xl font-bold mb-6">Daily Life in Japan</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {interview.map((interview) => (
+              {interviews.map((interview) => (
                 <InterviewCard key={interview.slug} interview={interview} />
               ))}
             </div>
