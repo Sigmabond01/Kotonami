@@ -11,7 +11,7 @@ import axios from 'axios';
       useEffect(() => {
         const fetchDailyVideos = async () => {
           try {
-            const response = await axios.get('http://localhost:3002/api/dailylife');
+            const response = await axios.get('http://localhost:3003/api/dailylife');
             setDailyVideos(response.data);
           } catch (err) {
             console.error("Failed bro:", err);

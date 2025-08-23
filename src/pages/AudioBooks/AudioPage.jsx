@@ -11,7 +11,7 @@ import axios from "axios";
       useEffect(() => {
         const fetchAudio = async () => {
           try {
-            const response = await axios.get('http://localhost:3001/api/audiobooks');
+            const response = await axios.get('http://localhost:3003/api/audiobooks');
             setAudio(response.data);
           } catch (err) {
             setError("Failed to fetch audioBooks bro");

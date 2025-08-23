@@ -11,7 +11,7 @@ import axios from 'axios';
       useEffect(() => {
         const fetchPodcasts = async () => {
           try {
-            const response = await axios.get('http://localhost:3004/api/podcasts');
+            const response = await axios.get('http://localhost:3003/api/podcasts');
             setPodcasts(response.data);
           } catch (err) {
             console.error("Failed to fetch pods:", err);

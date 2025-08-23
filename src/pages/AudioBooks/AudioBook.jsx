@@ -35,7 +35,7 @@
       useEffect(() => {
         const fetchVideo = async () => {
           try {
-            const response = await axios.get(`http://localhost:3001/api/audiobooks/${slug}`);
+            const response = await axios.get(`http://localhost:3003/api/audiobooks/${slug}`);
             setVideo(response.data);
           } catch (err) {
             setError("Failed to fetch vid data bro");

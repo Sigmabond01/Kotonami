@@ -36,7 +36,7 @@ export default function DailyLifeDetail() {
             if(!slug) return;
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:3002/api/dailylife/${slug}`);
+                const response = await axios.get(`http://localhost:3003/api/dailylife/${slug}`);
                 setVideo(response.data);
             } catch (err) {
                 console.error("Failed to fetch details man:", err);
