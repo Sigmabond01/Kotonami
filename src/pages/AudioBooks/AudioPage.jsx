@@ -2,6 +2,7 @@ import { Sidebar } from "../../components/ui/Sidebar";
 import { AudioCard } from "./AudioCard";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Loader from "../../components/ui/Loader";
 
     export default function AudioPage() {
       const [audio, setAudio] = useState([]);
@@ -20,12 +21,11 @@ import axios from "axios";
             setLoading(false);
           }
         };
-
         fetchAudio();
       }, []);
 
       if(loading) {
-        return <div className="text-white p-10">Loading....wait up</div>
+        return <Loader />
       }
       if(error) {
         return <div className="text-white p-10">{error}</div>

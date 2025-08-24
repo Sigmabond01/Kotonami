@@ -2,6 +2,7 @@ import { DailyCard } from "./Dailycard";
 import { Sidebar } from "../../components/ui/Sidebar";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Loader from "../../components/ui/Loader";
 
     export default function DailyLifePage() {
       const [dailyVideos, setDailyVideos] = useState([]);
@@ -24,7 +25,7 @@ import axios from 'axios';
       }, []);
 
       if(loading) {
-        return <div className="text-white p-10">Loading....</div>;
+        return <Loader />
       }
       if(error) {
         return <div className="text-white p-10">{error}</div>

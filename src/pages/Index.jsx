@@ -34,15 +34,17 @@ export default function Index() {
   <Route
     path="/"
     element={
+      <>
+      <Hero />
       <MidnightMistWrapper>
         <div className='space-y-28'>
-        <Hero />
         <div ref={aboutRef}><About /></div>
         <VideoExample2 />
         <div ref={featureRef}><FeaturesSectionDemo /></div>
         <Footer />
         </div>
       </MidnightMistWrapper>
+      </>
     }
   />
 </Routes>

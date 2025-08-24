@@ -22,6 +22,7 @@ html, body, #root {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-color: black;
 }
 
 .neon-text {

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useVideoSubtitles } from "../../hooks/useVideoSubtitles";
-import { ArrowLeft } from "lucide-react";
 import EpisodeList from "../../components/EpisodeList";
 
 export default function AnimeWatch() {
