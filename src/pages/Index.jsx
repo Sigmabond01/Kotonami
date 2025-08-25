@@ -8,6 +8,7 @@ import { VideoExample2 } from '../components/VideoExample2';
 
 import MidnightMistWrapper from '../components/ui/MidnightMist';
 import { Hero } from '../components/Hero';
+import Disclaimer from '../components/Disclaimer';
  
 export default function Index() {
  const aboutRef = useRef(null);
@@ -39,6 +40,7 @@ export default function Index() {
       <MidnightMistWrapper>
         <div className='space-y-28'>
         <div ref={aboutRef}><About /></div>
+        <Disclaimer />
         <VideoExample2 />
         <div ref={featureRef}><FeaturesSectionDemo /></div>
         <Footer />

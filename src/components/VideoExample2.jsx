@@ -1,5 +1,4 @@
 import React from "react";
-import Pattern from "./ui/Pattern";
 import { VideoExample } from "./ui/VideoExample";
 
 export function VideoExample2() {

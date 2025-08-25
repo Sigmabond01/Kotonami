@@ -4,6 +4,7 @@ import { Sidebar } from "../../components/ui/Sidebar";
 import Searchbar from "../../components/ui/Searchbar";
 import { AnimeCard } from "./AnimeCard";
 import axios from "axios";
+import Disclaimer from "../../components/Disclaimer";
 
 export default function Anime() {
   const [animeList, setAnimeList] = useState([]);
@@ -28,6 +29,7 @@ export default function Anime() {
       <Sidebar />
       <div className="flex-1 ml-16 md:ml-60 p-8">
         <Searchbar />
+        <Disclaimer />
         {loading ? (
           <div className="text-center">Loading shows...</div>
         ) : (

@@ -3,6 +3,7 @@ import { AudioCard } from "./AudioCard";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "../../components/ui/Loader";
+import Disclaimer from "../../components/Disclaimer";
 
     export default function AudioPage() {
       const [audio, setAudio] = useState([]);
@@ -34,7 +35,8 @@ import Loader from "../../components/ui/Loader";
         <div className="flex min-h-screen bg-gradient-to-r from-[#0f172a]  to-[#334155] text-white">
           <Sidebar />
           <main className="flex-1 ml-16 md:ml-60 p-6">
-            <h1 className="text-3xl font-bold mb-6">Daily Life in Japan</h1>
+            <h1 className="text-3xl font-bold mb-6">Japanese AudioBooks</h1>
+            <Disclaimer />
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {audio.map((audio) => (
                 <AudioCard key={audio.slug} audio={audio} />

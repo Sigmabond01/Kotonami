@@ -46,7 +46,6 @@ export default function AnimeWatch() {
     const [errorWordData, setErrorWordData] = useState(null);
     const [showWordDetailsPanel, setShowWordDetailsPanel] = useState(false);
 
-    // Click handler for subtitles
     const handleJapaneseSubtitleClick = async (sentence) => {
         if (!sentence) return;
         setLoadingWordData(true);
@@ -72,92 +71,113 @@ export default function AnimeWatch() {
         setSelectedWordData(null);
     }, [selectedEpisode]);
 
+    if (loading) return <div className="text-white p-10 flex items-center justify-center min-h-screen font-mincho bg-gradient-to-br from-[#0a0a14] via-[#0f0f20] to-[#0a0a14]">
+      <div className="flex flex-col items-center">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-cyan-400 mb-4"></div>
+        <p className="text-xl text-cyan-300 font-semibold tracking-wide">Loading Anime...</p>
+      </div>
+    </div>;
 
-    if (loading) return <div className="text-white p-10">Loading Anime...</div>;
-    if (!item) return <div className="text-white p-10">Anime not found.</div>;
+    if (!item) return <div className="text-white p-10 flex items-center justify-center min-h-screen bg-gradient-to-br from-[#0a0a14] via-[#0f0f20] to-[#0a0a14]">
+      <div className="text-center">
+        <p className="text-xl text-red-400 font-semibold tracking-wide">Anime not found. 😔</p>
+        <Link to="/" className="mt-4 inline-block px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-full font-bold transition-transform transform hover:scale-105">Go Home</Link>
+      </div>
+    </div>;
 
     return (
-        <div className="flex min-h-screen bg-gradient-to-r from-[#0f172a]  to-[#334155] text-white font-mincho">
-            <main className="flex-1 px-6 py-10 flex flex-col lg:flex-row gap-6">
-    {/* LEFT: Episode List */}
-    <EpisodeList
-        episodes={item.episodes}
-        currentEpisode={selectedEpisode}
-        onSelectEpisode={setSelectedEpisode}
-    />
+        <div className="flex min-h-screen bg-gradient-to-br from-[#0a0a14] via-[#0f0f20] to-[#0a0a14] text-white font-mincho antialiased">
+            <main className="flex w-full px-4 sm:px-6 py-8 gap-6">
+                <div className="w-full lg:w-80 flex-shrink-0 mr-16">
+                    <EpisodeList
+                        episodes={item.episodes}
+                        currentEpisode={selectedEpisode}
+                        onSelectEpisode={setSelectedEpisode}
+                    />
+                </div>
 
-    {/* CENTER: Video Player */}
-    <div className="flex-1 space-y-6">
-        <div>
-            <h1 className="text-2xl font-bold mb-2">{item.title}</h1>
-            {selectedEpisode && (
-                <h2 className="text-lg text-white/70">
-                    Episode {selectedEpisode.number}: {selectedEpisode.title}
-                </h2>
-            )}
-        </div>
+                <div className="flex-1 space-y-6 flex flex-col">
+                    <div>
+                        <h1 className="text-3xl font-bold mb-1 text-cyan-300 drop-shadow-md">{item.title}</h1>
+                        {selectedEpisode && (
+                            <h2 className="text-xl text-white/80 font-medium">
+                                Episode {selectedEpisode.number}: {selectedEpisode.title}
+                            </h2>
+                        )}
+                    </div>
 
-        <div
-            ref={videoContainerRef}
-            className={`group relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg bg-black ${
-                isFullscreen ? "fixed top-0 left-0 w-screen h-screen z-50 rounded-none" : ""
-            }`}
-        >
-            <div id="youtube-player" className="absolute top-0 left-0 w-full h-full"></div>
-            {playerReady && (
-                <button
-                    onClick={toggleFullscreen}
-                    className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full z-20 transition opacity-0 group-hover:opacity-100"
-                >
-                    {isFullscreen ? <MinimizeIcon size={20} /> : <MaximizeIcon size={20} />}
-                </button>
-            )}
-            {playerReady && activeJapaneseSubtitle && (
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-fit max-w-[90%] p-3 text-center bg-black/40 rounded-lg">
-                    <p
-                        className="text-yellow-300 text-xl font-bold cursor-pointer hover:underline"
-                        onClick={() => handleJapaneseSubtitleClick(activeJapaneseSubtitle.text)}
+                    <div
+                        ref={videoContainerRef}
+                        className={`group relative pt-[56.25%] w-full overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 ${
+                            isFullscreen ? "fixed top-0 left-0 w-screen h-screen z-50 rounded-none" : ""
+                        }`}
                     >
-                        {activeJapaneseSubtitle.text}
-                    </p>
-                </div>
-            )}
-        </div>
-    </div>
-
-    {/* RIGHT: Word Breakdown */}
-    {showWordDetailsPanel && (
-        <div className="w-full lg:w-80 bg-black/20 rounded-xl p-4 shadow-lg flex-shrink-0 max-h-[calc(100vh-120px)] overflow-y-auto border border-white/10">
-            <div className="flex justify-between items-center mb-3">
-                <h2 className="text-xl font-semibold">Word Breakdown</h2>
-                <button
-                    onClick={() => setShowWordDetailsPanel(false)}
-                    className="text-2xl hover:text-red-500"
-                >
-                    &times;
-                </button>
-            </div>
-            {loadingWordData && <p className="text-gray-400">Loading...</p>}
-            {errorWordData && <p className="text-red-400">{errorWordData}</p>}
-            {!loadingWordData && !errorWordData && selectedWordData && (
-                <div className="space-y-4">
-                    {Array.isArray(selectedWordData) &&
-                        selectedWordData.map((wordInfo, idx) => (
-                            <div key={idx} className="pb-2 border-b border-gray-700 last:border-b-0">
-                                <h3 className="text-lg font-bold text-teal-300">{wordInfo.word}</h3>
-                                <p className="text-sm">Reading: {wordInfo.reading}</p>
-                                <p className="text-sm">Romaji: {wordInfo.romaji}</p>
-                                <p className="text-sm">
-                                    Meaning: {wordInfo.meaning || "Not found"}
+                        <div id="youtube-player" className="absolute top-0 left-0 w-full h-full"></div>
+                        {playerReady && (
+                            <button
+                                onClick={toggleFullscreen}
+                                className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white p-3 rounded-full z-20 transition-all duration-300 opacity-0 group-hover:opacity-100"
+                            >
+                                {isFullscreen ? <MinimizeIcon size={24} /> : <MaximizeIcon size={24} />}
+                            </button>
+                        )}
+                        {playerReady && activeJapaneseSubtitle && (
+                            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-fit max-w-[90%] p-3 text-center bg-black/20 backdrop-blur-sm rounded-lg shadow-xs">
+                                <p
+                                    className="text-yellow-300 text-lg font-bold cursor-pointer"
+                                    onClick={() => handleJapaneseSubtitleClick(activeJapaneseSubtitle.text)}
+                                >
+                                    {activeJapaneseSubtitle.text}
                                 </p>
-                                <p className="text-sm">JLPT: {wordInfo.jlpt}</p>
                             </div>
-                        ))}
+                        )}
+                    </div>
+                    
+                    {!playerReady && (
+                        <div className="flex justify-center items-center h-48">
+                            <p className="text-white/60 text-lg">Loading video player and subtitles...</p>
+                        </div>
+                    )}
                 </div>
-            )}
+
+                {showWordDetailsPanel && (
+                    <div className="w-full lg:w-96 bg-black/50 rounded-2xl p-6 shadow-2xl flex-shrink-0 max-h-[calc(100vh-64px)] overflow-y-auto border border-slate-700/50 backdrop-blur-sm transition-all duration-500">
+                        <div className="flex justify-between items-center mb-4">
+                            <h2 className="text-2xl font-semibold text-cyan-300">Word Breakdown</h2>
+                            <button
+                                onClick={() => setShowWordDetailsPanel(false)}
+                                className="text-3xl text-slate-400 hover:text-red-400 transition-colors"
+                            >
+                                &times;
+                            </button>
+                        </div>
+                        {loadingWordData && <p className="text-slate-400 animate-pulse">Analyzing text...</p>}
+                        {errorWordData && <p className="text-red-400 text-sm">{errorWordData}</p>}
+                        {!loadingWordData && !errorWordData && selectedWordData && (
+                            <div className="space-y-5">
+                                {Array.isArray(selectedWordData) &&
+                                    selectedWordData.map((wordInfo, idx) => (
+                                        <div key={idx} className="pb-4 border-b border-slate-700/70 last:border-b-0">
+                                            <h3 className="text-xl font-bold text-cyan-200">{wordInfo.word}</h3>
+                                            <p className="text-base text-slate-300">
+                                                <span className="font-semibold">Reading:</span> {wordInfo.reading || 'N/A'}
+                                            </p>
+                                            <p className="text-base text-slate-300">
+                                                <span className="font-semibold">Romaji:</span> {wordInfo.romaji || 'N/A'}
+                                            </p>
+                                            <p className="text-base text-slate-300">
+                                                <span className="font-semibold">Meaning:</span> {wordInfo.meaning || "Not found"}
+                                            </p>
+                                            <p className="text-base text-slate-300">
+                                                <span className="font-semibold">JLPT:</span> {wordInfo.jlpt || 'N/A'}
+                                            </p>
+                                        </div>
+                                    ))}
+                            </div>
+                        )}
+                    </div>
+                )}
+            </main>
         </div>
-    )}
-</main>
-</div>
     );
 }

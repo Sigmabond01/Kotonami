@@ -1,4 +1,3 @@
-// src/hooks/useVideoSubtitles.js
 import { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
 import { Maximize, Minimize } from 'lucide-react';
@@ -7,7 +6,8 @@ const getYouTubeVideoId = (url) => {
     if (!url) {
         return null;
     }
-    const regex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/i;
+    // eslint-disable-next-line no-useless-escape
+    const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
     const match = url.match(regex);
     return match ? match[1] : null;
 };
@@ -21,7 +21,6 @@ const timeToSeconds = (timeStr) => {
     return hours * 3600 + minutes * 60 + seconds;
 };
 
-//  FIX 1: Add 'fetchEnglish = true' as a parameter
 export const useVideoSubtitles = (videoEmbedUrl, fetchEnglish = true) => {
     const youtubeVideoId = getYouTubeVideoId(videoEmbedUrl);
 
@@ -131,19 +130,34 @@ export const useVideoSubtitles = (videoEmbedUrl, fetchEnglish = true) => {
             setEnglishSubtitles([]);
 
             try {
-                //  FIX 2: Make fetching conditional
                 const jpPromise = axios.get(`http://localhost:3001/api/subtitles/${youtubeVideoId}?lang=ja`);
+                
                 if (fetchEnglish) {
                     const enPromise = axios.get(`http://localhost:3001/api/subtitles/${youtubeVideoId}?lang=en`);
-                    const [jpRes, enRes] = await Promise.all([jpPromise, enPromise]);
-                    setJapaneseSubtitles(Array.isArray(jpRes.data) ? jpRes.data : []);
-                    setEnglishSubtitles(Array.isArray(enRes.data) ? enRes.data : []);
+                    const [jpRes, enRes] = await Promise.allSettled([jpPromise, enPromise]);
+
+                    // Check if Japanese subtitles were fetched successfully
+                    if (jpRes.status === 'fulfilled') {
+                        setJapaneseSubtitles(Array.isArray(jpRes.value.data) ? jpRes.value.data : []);
+                    } else {
+                        // Log a specific error for Japanese subtitles
+                        console.error("Error fetching Japanese subtitles:", jpRes.reason);
+                        setErrorSubtitles("Failed to load Japanese subtitles.");
+                    }
+                    
+                    // Check if English subtitles were fetched successfully
+                    if (enRes.status === 'fulfilled') {
+                        setEnglishSubtitles(Array.isArray(enRes.value.data) ? enRes.value.data : []);
+                    } else {
+                        // Log a specific error for English subtitles
+                        console.error("Error fetching English subtitles:", enRes.reason);
+                    }
                 } else {
                     const jpRes = await jpPromise;
                     setJapaneseSubtitles(Array.isArray(jpRes.data) ? jpRes.data : []);
                 }
             } catch (err) {
-                console.error("Error fetching subtitles:", err);
+                console.error("General subtitle fetching error:", err);
                 setErrorSubtitles("Failed to load subtitles.");
             } finally {
                 setLoadingSubtitles(false);

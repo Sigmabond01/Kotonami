@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaXTwitter, FaYoutube, FaGithub, FaEnvelope, FaBook, FaLanguage, FaHeart } from "react-icons/fa6";
+import { FaXTwitter, FaGithub, FaEnvelope, FaHeart } from "react-icons/fa6";
 import Logo from "./ui/Logo";
 
 export function Footer() {
