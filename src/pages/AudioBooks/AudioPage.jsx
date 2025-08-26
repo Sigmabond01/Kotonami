@@ -1,5 +1,5 @@
 import { Sidebar } from "../../components/ui/Sidebar";
-import { AudioCard } from "./AudioCard";
+import { AudioCard } from './AudioCard';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "../../components/ui/Loader";

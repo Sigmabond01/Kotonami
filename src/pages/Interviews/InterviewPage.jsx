@@ -1,5 +1,5 @@
 import { Sidebar } from "../../components/ui/Sidebar";
-import { InterviewCard } from "./InterviewCard";
+import { InterviewCard } from './InterviewCard';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Disclaimer from "../../components/Disclaimer";

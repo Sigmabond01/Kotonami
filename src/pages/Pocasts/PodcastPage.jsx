@@ -1,5 +1,5 @@
 import { Sidebar } from "../../components/ui/Sidebar";
-import { PodcastCard } from "./PodcastCard";
+import { PodcastCard } from './PodcastCard';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Disclaimer from "../../components/Disclaimer";
