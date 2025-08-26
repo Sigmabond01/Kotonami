@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { ArrowLeft } from "lucide-react";
-import Logo from "../../components/ui/Logo";
 import Loader from "../../components/ui/Loader";
-import { Navbar } from "../../components/ui/navbar";
+import { Navbar } from "../../components/ui/Navbar-top";
 import { Footer } from "../../components/Footer";
 
 export default function AnimeDetail() {

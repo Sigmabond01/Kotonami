@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Navbar } from "./navbar";
+import { Navbar } from "./Navbar-top";
 
 export default function Hero2() {
   const navigate = useNavigate();
