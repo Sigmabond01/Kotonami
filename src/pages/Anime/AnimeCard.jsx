@@ -17,9 +17,6 @@ export function AnimeCard({ anime }) {
             {anime.title}
           </h3>
           <div className="flex items-center justify-between gap-3">
-            <span className="text-xs px-3 py-1 bg-blue-700/80 rounded-xl text-white font-medium">
-              {anime.level}
-            </span>
             <p className="text-xs text-blue-300/80 truncate">
               Subs: {anime.subtitles.join(", ")}
             </p>

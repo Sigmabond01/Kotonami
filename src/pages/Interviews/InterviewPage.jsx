@@ -12,7 +12,7 @@ import Disclaimer from "../../components/Disclaimer";
       useEffect(() => {
         const fetchInterviews = async () => {
           try {
-            const response = await axios.get('http://localhost:3003/api/interviews');
+            const response = await axios.get('https://kotonami-backend.onrender.com/api/interviews');
             setInterviews(response.data);
           } catch (err) {
             console.error("Failed to fetch interviews:", err);

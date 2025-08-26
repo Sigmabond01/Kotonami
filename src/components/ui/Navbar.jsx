@@ -35,7 +35,6 @@ export function Navbar() {
           <Logo />
         </div>
 
-        {/* Desktop Nav */}
         <ul className="hidden md:flex items-center space-x-12">
           {links.map(link => (
             <li key={link.name}>
@@ -49,7 +48,7 @@ export function Navbar() {
                 {link.name}
                 <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-blue-400 transform transition-transform duration-300 ${
                   activeLink === link.name ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                }`}></span>
+                }`} />
               </Link>
             </li>
           ))}
@@ -73,8 +72,7 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav */}
-      <div className={`md:hidden transition-all duration-300 overflow-hidden ${
+      <div className={`md:hidden transition-all duration-300 overflow-hidden bg-black ${
         isOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
       }`}>
         <ul className="flex flex-col space-y-4">
@@ -84,7 +82,7 @@ export function Navbar() {
                 to={link.to}
                 onClick={() => handleLinkClick(link.name)}
                 className={`block font-medium py-2 px-4 rounded-lg transition hover:bg-white/10 ${
-                  activeLink === link.name ? "text-green-400" : "text-white"
+                  activeLink === link.name ? "text-blue-400" : "text-white"
                 }`}
               >
                 {link.name}

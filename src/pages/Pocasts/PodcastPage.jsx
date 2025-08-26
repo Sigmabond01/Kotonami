@@ -12,7 +12,7 @@ import Disclaimer from "../../components/Disclaimer";
       useEffect(() => {
         const fetchPodcasts = async () => {
           try {
-            const response = await axios.get('http://localhost:3003/api/podcasts');
+            const response = await axios.get('https://kotonami-backend.onrender.com/api/podcasts');
             setPodcasts(response.data);
           } catch (err) {
             console.error("Failed to fetch pods:", err);

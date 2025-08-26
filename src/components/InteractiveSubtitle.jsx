@@ -15,7 +15,7 @@ export default function InteractiveSubtitle({ text }) {
       }
       setLoading(true);
       try {
-        const response = await axios.post("http://localhost:3001/api/parse-japanese-text", { sentence: text });
+        const response = await axios.post("https://kotonami-backend.onrender.com/api/parse-japanese-text", { sentence: text });
         setWords(response.data);
       } catch (error) {
         console.error("Failed to parse sentence:", error);

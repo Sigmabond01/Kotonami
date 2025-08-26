@@ -13,7 +13,7 @@ import Disclaimer from "../../components/Disclaimer";
       useEffect(() => {
         const fetchDailyVideos = async () => {
           try {
-            const response = await axios.get('http://localhost:3003/api/dailylife');
+            const response = await axios.get('https://kotonami-backend.onrender.com/api/dailylife');
             setDailyVideos(response.data);
           } catch (err) {
             console.error("Failed bro:", err);

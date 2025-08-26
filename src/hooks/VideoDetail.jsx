@@ -29,7 +29,7 @@ export default function VideoDetail({video, backLink}) {
         setShowWordDetailsPanel(true);
 
         try {
-            const response = await axios.post('http://localhost:3001/api/parse-japanese-text', {
+            const response = await axios.post('https://kotonami-backend.onrender.com/api/parse-japanese-text', {
                 sentence
             });
             setSelectedWordData(response.data);

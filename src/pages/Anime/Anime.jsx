@@ -1,7 +1,6 @@
 // src/pages/Anime.jsx
 import { useState, useEffect } from "react";
 import { Sidebar } from "../../components/ui/Sidebar";
-import Searchbar from "../../components/ui/Searchbar";
 import { AnimeCard } from "./AnimeCard";
 import axios from "axios";
 import Disclaimer from "../../components/Disclaimer";
@@ -13,7 +12,7 @@ export default function Anime() {
   useEffect(() => {
     const fetchAnime = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/anime");
+        const response = await axios.get("https://kotonami-backend.onrender.com/api/anime");
         setAnimeList(response.data);
       } catch (error) {
         console.error("Failed to fetch anime:", error);
@@ -28,7 +27,6 @@ export default function Anime() {
     <div className="flex bg-gradient-to-r from-[#0f172a]  to-[#334155] min-h-screen text-white font-mincho">
       <Sidebar />
       <div className="flex-1 ml-16 md:ml-60 p-8">
-        <Searchbar />
         <Disclaimer />
         {loading ? (
           <div className="text-center">Loading shows...</div>
