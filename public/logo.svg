@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Circle badge (optional, can remove fill if you want pure transparent bg) -->
+  <circle cx="100" cy="100" r="98" fill="white" stroke="black" stroke-width="2"/>
+
+  <!-- Kanji text -->
+  <text x="50%" y="80" dominant-baseline="middle" text-anchor="middle"
+        font-size="48" font-family="serif">
+    琴波
+  </text>
+
+  <!-- English text -->
+  <text x="50%" y="135" dominant-baseline="middle" text-anchor="middle"
+        font-size="20" font-family="sans-serif" letter-spacing="3">
+    KOTONAMI
+  </text>
+</svg>
