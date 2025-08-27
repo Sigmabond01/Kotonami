@@ -49,18 +49,25 @@ export default function AnimeDetail() {
       <div className="flex justify-start mb-10 sm:mb-16 md:mb-28">
         <Navbar />
       </div>
-      <Link
+<Link
   to="/anime"
-  className="group inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-md 
-             text-blue-400 hover:text-white hover:bg-blue-700/20 
-             text-sm sm:text-base font-medium transition-colors duration-300 mb-4 sm:mb-6"
+  className="
+    flex w-full sm:w-auto items-center justify-center gap-2 
+    px-4 py-3 sm:px-5 sm:py-2.5 
+    rounded-lg font-medium
+    text-sm sm:text-base 
+    text-blue-400 bg-blue-900/20 
+    hover:bg-blue-700/30 hover:text-white 
+    transition-colors duration-300 mb-4 sm:mb-6
+  "
 >
   <ArrowLeft
     size={18}
     className="transition-transform duration-300 group-hover:-translate-x-1"
   />
-  <span className="truncate">Return to Animes</span>
+  Return to Animes
 </Link>
+
       <div className="max-w-8xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
         <img src={item.image} alt={item.title} className="rounded-xl w-full max-w-sm md:w-[400px] object-cover shadow-lg" />
         <div className="space-y-4 flex-1 text-center md:text-left">
