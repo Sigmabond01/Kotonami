@@ -18,8 +18,9 @@ export function AnimeCard({ anime }) {
           </h3>
           <div className="flex items-center justify-between gap-2 sm:gap-3">
             <p className="text-xs text-blue-300/80 truncate">
-              Subs: {anime.subtitles.join(", ")}
-            </p>
+              Subs: {anime.subtitles && anime.subtitles.length > 0 
+    ? anime.subtitles.join(", ") 
+    : "N/A"} </p>
           </div>
         </div>
       </div>
