@@ -38,11 +38,13 @@ Kotonami (言波 - "word waves") revolutionizes Japanese language learning throu
 <td width="50%">
 
 ### 🎥 **Smart Video Player**
+
 - Interactive subtitles with word-by-word breakdown
 - Multiple playback speeds for different skill levels
 - Seamless streaming with adaptive quality
 
 ### 📚 **Content Library**
+
 - **Anime** - Popular series with educational value
 - **Daily Life** - Real conversations and situations
 - **Interviews** - Professional Japanese speakers
@@ -53,12 +55,14 @@ Kotonami (言波 - "word waves") revolutionizes Japanese language learning throu
 <td width="50%">
 
 ### 🧠 **Learning Tools**
+
 - Instant dictionary lookups
 - Grammar explanations in context
 - Word frequency analysis
 - Progress tracking
 
 ### 🔐 **User Experience**
+
 - Secure authentication system
 - Personalized content recommendations
 - Bookmarking and favorites
@@ -74,11 +78,11 @@ Kotonami (言波 - "word waves") revolutionizes Japanese language learning throu
 
 <div align="center">
 
-| Frontend | Styling | Icons & UI | Backend Integration |
-|----------|---------|------------|-------------------|
-| ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white) | ![Styled Components](https://img.shields.io/badge/-Styled%20Components-DB7093?logo=styled-components&logoColor=white) | ![Tabler Icons](https://img.shields.io/badge/-Tabler%20Icons-1C7ED6?logo=tabler&logoColor=white) | ![Axios](https://img.shields.io/badge/-Axios-5A29E4?logo=axios&logoColor=white) |
-| ![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white) | ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white) | ![Lucide React](https://img.shields.io/badge/-Lucide-F56565?logo=lucide&logoColor=white) | ![React Router](https://img.shields.io/badge/-React%20Router-CA4245?logo=reactrouter&logoColor=white) |
-| | ![Framer Motion](https://img.shields.io/badge/-Framer%20Motion-0055FF?logo=framer&logoColor=white) | ![React Icons](https://img.shields.io/badge/-React%20Icons-E91E63?logoColor=white) | |
+| Frontend                                                                        | Styling                                                                                                               | Icons & UI                                                                                       | Backend Integration                                                                                   |
+| ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white) | ![Styled Components](https://img.shields.io/badge/-Styled%20Components-DB7093?logo=styled-components&logoColor=white) | ![Tabler Icons](https://img.shields.io/badge/-Tabler%20Icons-1C7ED6?logo=tabler&logoColor=white) | ![Axios](https://img.shields.io/badge/-Axios-5A29E4?logo=axios&logoColor=white)                       |
+| ![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white)    | ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white)                 | ![Lucide React](https://img.shields.io/badge/-Lucide-F56565?logo=lucide&logoColor=white)         | ![React Router](https://img.shields.io/badge/-React%20Router-CA4245?logo=reactrouter&logoColor=white) |
+|                                                                                 | ![Framer Motion](https://img.shields.io/badge/-Framer%20Motion-0055FF?logo=framer&logoColor=white)                    | ![React Icons](https://img.shields.io/badge/-React%20Icons-E91E63?logoColor=white)               |                                                                                                       |
 
 </div>
 
@@ -130,12 +134,12 @@ yarn dev
 
 ### 🔧 Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server with hot reload |
-| `npm run build` | Build production-ready application |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint for code quality checks |
+| Command           | Description                              |
+| ----------------- | ---------------------------------------- |
+| `npm run dev`     | Start development server with hot reload |
+| `npm run build`   | Build production-ready application       |
+| `npm run preview` | Preview production build locally         |
+| `npm run lint`    | Run ESLint for code quality checks       |
 
 ---
 
@@ -172,8 +176,8 @@ kotonami/
 
 ```javascript
 // Click on any subtitle word for instant breakdown
-<InteractiveSubtitle 
-  text="こんにちは、世界！" 
+<InteractiveSubtitle
+  text="こんにちは、世界！"
   onWordClick={(word) => showDefinition(word)}
 />
 ```
@@ -192,14 +196,18 @@ const { video, subtitles, loading } = useVideoSubtitles(videoId);
 We welcome contributions from the community! Here's how you can help make Kotonami better:
 
 ### 🐛 Bug Reports
+
 Found a bug? [Open an issue](../../issues) with:
+
 - Clear description of the problem
 - Steps to reproduce
 - Expected vs actual behavior
 - Screenshots if applicable
 
 ### 💡 Feature Requests
+
 Have an idea? [Start a discussion](../../discussions) about:
+
 - The problem your feature would solve
 - Proposed solution
 - Alternative solutions considered
@@ -226,24 +234,26 @@ Have an idea? [Start a discussion](../../discussions) about:
 
 ## 📚 Documentation
 
-| Resource | Description |
-|----------|-------------|
-| [API Documentation](#) | Complete API reference and examples |
-| [Component Library](#) | Reusable component documentation |
-| [Deployment Guide](#) | Step-by-step deployment instructions |
-| [Contributing Guide](#) | Detailed contribution guidelines |
+| Resource                | Description                          |
+| ----------------------- | ------------------------------------ |
+| [API Documentation](#)  | Complete API reference and examples  |
+| [Component Library](#)  | Reusable component documentation     |
+| [Deployment Guide](#)   | Step-by-step deployment instructions |
+| [Contributing Guide](#) | Detailed contribution guidelines     |
 
 ---
 
 ## 🗺️ Roadmap
 
 ### 🎯 Current Focus
+
 - [ ] Mobile app development (React Native)
 - [ ] Offline viewing capabilities
 - [ ] Advanced progress tracking
 - [ ] Community features (comments, ratings)
 
 ### 🚀 Future Plans
+
 - [ ] AI-powered content recommendations
 - [ ] Voice recognition practice
 - [ ] Gamification elements
@@ -266,7 +276,7 @@ Have an idea? [Start a discussion](../../discussions) about:
 
 ## 📄 License
 
-This project is licensed under the **ISC License**. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](./LICENSE). See the LICENSE file for details.
 
 ---
 
