@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import { Sidebar } from "../../components/ui/Sidebar"; // Adjusted path to lowercase 'sidebar'
+import { Sidebar } from "../../components/ui/Main/Sidebar";
 import VideoDetail from "../../hooks/VideoDetail"; // Adjusted path to lowercase 'videoDetail'
-import Loader from "../../components/ui/Loader";
+import Loader from "../../components/ui/Main/Loader";
 
 export default function AudioBookDetail() {
   const { slug } = useParams();
@@ -17,7 +17,7 @@ export default function AudioBookDetail() {
 
       while (retries < maxRetries) {
         try {
-          const res = await axios.get(`https://kotonami-backend.onrender.com/api/audiobooks/${slug}`);
+          const res = await axios.get(`http://localhost:4000/api/audiobooks/${slug}`);
           setVideo(res.data);
           return;
         } catch (error) {

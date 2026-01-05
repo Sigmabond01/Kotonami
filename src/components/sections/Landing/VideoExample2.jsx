@@ -1,5 +1,5 @@
 import React from "react";
-import { VideoExample } from "./ui/VideoExample";
+import VideoExample from "../../ui/Landing/VideoExample";
 
 export function VideoExample2() {
   return (

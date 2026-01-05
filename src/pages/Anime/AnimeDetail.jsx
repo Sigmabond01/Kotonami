@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { ArrowLeft } from "lucide-react";
-import Loader from "../../components/ui/Loader";
-import { Navbar } from "../../components/ui/Navbar-top";
-import { Footer } from "../../components/Footer";
+import Loader from "../../components/ui/Main/Loader";
+import { Navbar } from "../../components/ui/Main/Navbar";
+import { Footer } from "../../components/sections/Landing/Footer";
 
 export default function AnimeDetail() {
   const { slug } = useParams();
@@ -17,7 +17,7 @@ export default function AnimeDetail() {
 
       const start = Date.now();
       try {
-        const response = await axios.get(`https://kotonami-backend.onrender.com/api/anime/${slug}`);
+        const response = await axios.get(`http://localhost:4000/api/anime/${slug}`);
         const data = response.data;
 
         const elapsed = Date.now() - start;

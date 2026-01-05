@@ -130,10 +130,10 @@ export const useVideoSubtitles = (videoEmbedUrl, fetchEnglish = true) => {
             setEnglishSubtitles([]);
 
             try {
-                const jpPromise = axios.get(`https://kotonami-backend.onrender.com/api/subtitles/${youtubeVideoId}?lang=ja`);
-                
+                const jpPromise = axios.get(`http://localhost:4000/api/subtitles/${youtubeVideoId}?lang=ja`);
+
                 if (fetchEnglish) {
-                    const enPromise = axios.get(`https://kotonami-backend.onrender.com/api/subtitles/${youtubeVideoId}?lang=en`);
+                    const enPromise = axios.get(`http://localhost:4000/api/subtitles/${youtubeVideoId}?lang=en`);
                     const [jpRes, enRes] = await Promise.allSettled([jpPromise, enPromise]);
 
                     // Check if Japanese subtitles were fetched successfully
@@ -144,7 +144,7 @@ export const useVideoSubtitles = (videoEmbedUrl, fetchEnglish = true) => {
                         console.error("Error fetching Japanese subtitles:", jpRes.reason);
                         setErrorSubtitles("Failed to load Japanese subtitles.");
                     }
-                    
+
                     // Check if English subtitles were fetched successfully
                     if (enRes.status === 'fulfilled') {
                         setEnglishSubtitles(Array.isArray(enRes.value.data) ? enRes.value.data : []);

@@ -1,16 +1,16 @@
-import { Sidebar } from "../../components/ui/Sidebar";
+import { Sidebar } from "../../components/ui/Main/Sidebar";
 import VideoDetail from "../../hooks/VideoDetail";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Loader from "../../components/ui/Loader";
+import Loader from "../../components/ui/Main/Loader";
 
 export default function InterviewDetail() {
   const { slug } = useParams();
   const [video, setVideo] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://kotonami-backend.onrender.com/api/interviews/${slug}`).then(res => setVideo(res.data));
+    axios.get(`http://localhost:4000/api/interviews/${slug}`).then(res => setVideo(res.data));
   }, [slug]);
 
   if (!video) return <Loader />;

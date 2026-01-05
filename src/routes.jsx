@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom";
-import PageWrapper from "./components/PageWrapper";
+import PageWrapper from "./components/ui/misc/PageWrapper";
 
-import Index from "./pages/Index";
+import Index from "./pages/Landing";
 
 import DailyLifePage from "./pages/DailyLife/DailyLifePage";
 import DailyLifeDetail from "./pages/DailyLife/DailyLifeDetail";
@@ -19,8 +19,8 @@ import AnimeDetail from "./pages/Anime/AnimeDetail";
 import Anime from "./pages/Anime/Anime";
 import AnimeWatch from "./pages/Anime/AnimeWatch";
 
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from "./components/sections/auth/Login";
+import Register from "./components/sections/auth/Register";
 
 export const appRoutes = (
   <>

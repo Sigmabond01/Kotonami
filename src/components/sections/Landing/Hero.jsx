@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { Navbar } from "./Navbar-top";
+import { Navbar } from "../../ui/Main/Navbar";
 
-export default function Hero2() {
+export default function Hero() {
   const navigate = useNavigate();
 
   return (

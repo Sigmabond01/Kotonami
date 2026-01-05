@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock, AlertCircle, Loader2 } from 'lucide-react';
-import useAuth from '../hooks/useAuth';
-import axios from '../api/axios';
+import useAuth from '../../../hooks/useAuth';
+import axios from '../../../api/axios';
 import { Link } from 'react-router-dom';
 
 const LOGIN_URL = '/auth/login'

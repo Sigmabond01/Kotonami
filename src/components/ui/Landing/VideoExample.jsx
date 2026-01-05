@@ -1,6 +1,6 @@
 import React from "react";
 
-export function VideoExample() {
+export default function VideoExample() {
   return (
     <section
       className="font-mincho relative w-full text-white"

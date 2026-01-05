@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaXTwitter, FaGithub, FaEnvelope, FaHeart } from "react-icons/fa6";
-import Logo from "./ui/Logo";
+import Logo from "../../ui/Main/Logo";
 
 export function Footer() {
   return (
@@ -9,7 +9,7 @@ export function Footer() {
         <div className="md:col-span-1">
           <Logo />
           <p className="mt-6 text-white/50 text-sm leading-relaxed">
-            Immersive Japanese learning through anime, daily life videos, interviews, 
+            Immersive Japanese learning through anime, daily life videos, interviews,
             podcasts, and more - powered by real-world content and instant subtitle breakdowns.
           </p>
         </div>
@@ -59,14 +59,14 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://x.com/Sigmabond01" 
-              target="_blank" className="hover:text-blue-400 transition-colors duration-200">
+              <a href="https://x.com/Sigmabond01"
+                target="_blank" className="hover:text-blue-400 transition-colors duration-200">
                 Send Feedback
               </a>
             </li>
             <li>
-              <a href="https://x.com/Sigmabond01" 
-              target="_blank" className="hover:text-blue-400 transition-colors duration-200">
+              <a href="https://x.com/Sigmabond01"
+                target="_blank" className="hover:text-blue-400 transition-colors duration-200">
                 Report Bug
               </a>
             </li>
@@ -76,30 +76,30 @@ export function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Connect</h3>
           <div className="flex space-x-4 mb-6">
-            <a 
-              href="https://x.com/Sigmabond01" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://x.com/Sigmabond01"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white/70 hover:text-blue-400 transition-colors duration-200 text-xl p-2 rounded-lg hover:bg-white/5"
               aria-label="Follow us on X (Twitter)"
             >
               <FaXTwitter />
             </a>
-            <a 
-              href="https://github.com/Sigmabond01" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://github.com/Sigmabond01"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white/70 hover:text-blue-400 transition-colors duration-200 text-xl p-2 rounded-lg hover:bg-white/5"
               aria-label="View our GitHub"
             >
               <FaGithub />
             </a>
-            <a 
-                href="mailto:smdnoor4966@gmail.com" 
-                className="text-white/70 hover:text-blue-400 transition-colors duration-200 text-xl p-2 rounded-lg hover:bg-white/5"
-              >
-                <FaEnvelope />
-              </a>
+            <a
+              href="mailto:smdnoor4966@gmail.com"
+              className="text-white/70 hover:text-blue-400 transition-colors duration-200 text-xl p-2 rounded-lg hover:bg-white/5"
+            >
+              <FaEnvelope />
+            </a>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useVideoSubtitles } from "../../hooks/useVideoSubtitles";
-import EpisodeList from "../../components/EpisodeList";
+import EpisodeList from "../../components/ui/Anime/EpisodeList";
 export default function AnimeWatch() {
     const { slug } = useParams();
     const [item, setItem] = useState(null);
@@ -12,7 +12,7 @@ export default function AnimeWatch() {
         const fetchAnimeData = async () => {
             if (!slug) return;
             try {
-                const response = await axios.get(`https://kotonami-backend.onrender.com/api/anime/${slug}`);
+                const response = await axios.get(`http://localhost:4000/api/anime/${slug}`);
                 setItem(response.data);
                 if (response.data.episodes && response.data.episodes.length > 0) {
                     setSelectedEpisode(response.data.episodes[0]);
@@ -48,7 +48,7 @@ export default function AnimeWatch() {
         setSelectedWordData(null);
         setShowWordDetailsPanel(true);
         try {
-            const response = await axios.post('https://kotonami-backend.onrender.com/api/parse-japanese-text', {
+            const response = await axios.post('http://localhost:4000/api/parse-japanese-text', {
                 sentence: sentence
             });
             setSelectedWordData(response.data);
@@ -112,9 +112,8 @@ export default function AnimeWatch() {
                     </div>
                     <div
                         ref={videoContainerRef}
-                        className={`group relative pt-[56.25%] w-full overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 ${
-                            isFullscreen ? "fixed top-0 left-0 w-screen h-screen z-50 rounded-none" : ""
-                        }`}
+                        className={`group relative pt-[56.25%] w-full overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 ${isFullscreen ? "fixed top-0 left-0 w-screen h-screen z-50 rounded-none" : ""
+                            }`}
                     >
                         <div id="youtube-player" className="absolute top-0 left-0 w-full h-full"></div>
                         {playerReady && (

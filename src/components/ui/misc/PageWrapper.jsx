@@ -14,7 +14,7 @@ export default function PageWrapper({ children }) {
         y: { duration: 0.45, ease: [0.23, 1, 0.32, 1] },
         filter: { duration: 0.35 }
       }}
-      className="min-h-screen w-full bg-gradient-to-r from-[#0f172a] to-[#334155] text-slate-200"
+      className="min-h-screen w-full bg-[#547792] text-slate-200"
     >
       {children}
     </motion.div>

@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { User, Mail, Lock, Eye, EyeOff, AlertCircle, Loader2, CheckCircle } from 'lucide-react';
-import useAuth from '../hooks/useAuth';
-import axios from '../api/axios';
+import useAuth from "../../../hooks/useAuth"
+import axios from '../../../api/axios';
 
 const REGISTER_URL = '/auth/register';
 

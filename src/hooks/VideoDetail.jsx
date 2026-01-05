@@ -4,7 +4,7 @@ import axios from "axios";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function VideoDetail({video, backLink}) {
+export default function VideoDetail({ video, backLink }) {
     const {
         videoContainerRef,
         playerReady,
@@ -22,14 +22,14 @@ export default function VideoDetail({video, backLink}) {
     const [showWordDetailsPanel, setShowWordDetailsPanel] = useState(false);
 
     const handleJapaneseSubtitleClick = async (sentence) => {
-        if(!sentence) return;
+        if (!sentence) return;
         setLoadingWordData(true);
         setErrorWordData(null);
         setSelectedWordData(null);
         setShowWordDetailsPanel(true);
 
         try {
-            const response = await axios.post('https://kotonami-backend.onrender.com/api/parse-japanese-text', {
+            const response = await axios.post('http://localhost:4000/api/parse-japanese-text', {
                 sentence
             });
             setSelectedWordData(response.data);
@@ -48,23 +48,22 @@ export default function VideoDetail({video, backLink}) {
                 <p className="text-sm text-gray-300 mb-6">{video.description}</p>
                 {backLink && (
                     <Link
-                    to={backLink.href}
-                    className="group inline-flex items-center gap-2 py-2 text-blue-400 hover:text-blue-700 mb-6">
+                        to={backLink.href}
+                        className="group inline-flex items-center gap-2 py-2 text-blue-400 hover:text-blue-700 mb-6">
                         <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1"></ArrowLeft>
                         <span className="font-medium">{backLink.label}</span>
                     </Link>
                 )}
                 <div
-                ref={videoContainerRef}
-                className={`relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg mb-6 bg-black ${
-                    isFullscreen ? 'fixed top-0 left-0 w-screen h-screen z-50 rounded-none' : ''
-                }`}
+                    ref={videoContainerRef}
+                    className={`relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg mb-6 bg-black ${isFullscreen ? 'fixed top-0 left-0 w-screen h-screen z-50 rounded-none' : ''
+                        }`}
                 >
                     <div id="youtube-player" className="absolute top-0 left-0 w-full h-full"></div>
                     {playerReady && (
                         <button
-                        onClick={toggleFullscreen}
-                        className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full z-20 transition opacity-0 group-hover:opacity-100">
+                            onClick={toggleFullscreen}
+                            className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full z-20 transition opacity-0 group-hover:opacity-100">
                             {isFullscreen ? <MinimizeIcon size={22} /> : <MaximizeIcon size={22} />}
                         </button>
                     )}
@@ -75,7 +74,7 @@ export default function VideoDetail({video, backLink}) {
                             )}
                             {activeJapaneseSubtitle && (
                                 <p className="text-yellow-300 text-xl font-bold cursor-pointer hover:underline"
-                                onClick={() => handleJapaneseSubtitleClick(activeJapaneseSubtitle.text)}
+                                    onClick={() => handleJapaneseSubtitleClick(activeJapaneseSubtitle.text)}
                                 >
                                     {activeJapaneseSubtitle.text}
                                 </p>
@@ -104,8 +103,8 @@ export default function VideoDetail({video, backLink}) {
                         </div>
                     )}
                     <button
-                    onClick={() => setShowWordDetailsPanel(false)}
-                    className="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors">
+                        onClick={() => setShowWordDetailsPanel(false)}
+                        className="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors">
                         Close
                     </button>
                 </div>
